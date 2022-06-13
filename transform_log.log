@@ -1,0 +1,209 @@
+
+Warning： 找不到package.json文件(不影响转换，无视这条)
+
+miniprogram to uni-app 转换日志
+
+---基本信息---
+时间: 2021-04-19 09:48:12
+语言: Javascript
+转换模式: Hbuilder X
+是否转换wxs文件: false
+
+---小程序基本信息---
+name: 靓果记
+version: 
+description: 
+appid: wx281260cdae0ed6eb
+projectname: 
+compileType: miniprogram
+author: 
+
+---目录信息---
+sourceFolder: C:/xincor/lgj_wxapp
+targetFolder: C:/xincor/lgj_wxapp_uni
+outputFolder: C:/xincor/lgj_wxapp_uni
+miniprogramRoot: C:/xincor/lgj_wxapp
+
+---日志信息---
+Convert App.vue success!
+Convert component siteinfo.js success!
+Convert component common\main.js success!
+Convert component common\vendor.js success!
+Convert component common\runtime.js success!
+Convert components\address\get-address.vue success!
+Convert components\address\get-ztd.vue success!
+Convert components\address\get-ztjf.vue success!
+Convert components\common\block-b.vue success!
+Convert components\common\footc.vue success!
+Convert components\common\jzz.vue success!
+Convert components\common\load.vue success!
+Convert components\common\mg-cell.vue success!
+Convert components\common\mg-coupon.vue success!
+Convert components\common\mg-img.vue success!
+Convert components\common\modal.vue success!
+Convert components\common\popup.vue success!
+Convert components\common\sq-btn.vue success!
+Convert components\common\tabbar.vue success!
+Convert components\common\tips.vue success!
+Convert components\drag\attenTion.vue success!
+Convert components\drag\blank.vue success!
+Convert components\drag\btn.vue success!
+Convert components\drag\card.vue success!
+Convert components\drag\discount.vue success!
+Convert components\drag\fixed.vue success!
+Convert components\drag\hot.vue success!
+Convert components\drag\lines.vue success!
+Convert components\drag\listNav.vue success!
+Convert components\drag\margic.vue success!
+Convert components\drag\notice.vue success!
+Convert components\drag\open.vue success!
+Convert components\drag\picLunbo.vue success!
+Convert components\drag\pictures.vue success!
+Convert components\drag\product.vue success!
+Convert components\drag\remind.vue success!
+Convert components\drag\search.vue success!
+Convert components\drag\storeMessage.vue success!
+Convert components\drag\susBtn.vue success!
+Convert components\drag\titles.vue success!
+Convert components\drag\tj-tools.vue success!
+Convert components\drag\vip.vue success!
+Convert components\drag\zx-list.vue success!
+Convert components\form\mg-agree.vue success!
+Convert components\form\mg-input.vue success!
+Convert components\form\mg-map.vue success!
+Convert components\form\mg-photo.vue success!
+Convert components\form\mg-radio.vue success!
+Convert components\form\number-box.vue success!
+Convert components\goods\add-goods.vue success!
+Convert components\goods\goods-car.vue success!
+Convert components\goods\index.vue success!
+Convert components\goods\spec.vue success!
+Convert components\template\share.vue success!
+Convert components\template\tcgg.vue success!
+Convert components\template\tcyhq.vue success!
+Convert components\third\uni-fab.vue success!
+Convert components\third\uni-nav-bar.vue success!
+Convert components\third\uni-notice-bar.vue success!
+Convert components\third\uni-rate.vue success!
+Convert components\third\uni-status-bar.vue success!
+Convert components\uQrcode\uni-qrcode.vue success!
+Convert components\v-tabs\v-tabs.vue success!
+Convert yb_wm\index\goods.vue success!
+Convert yb_wm\index\index.vue success!
+Convert yb_wm\index\my-index.vue success!
+Convert yb_wm\index\order-index.vue success!
+Convert yb_wm\order\order-dl.vue success!
+Convert yb_wm\other\hb.vue success!
+Convert yb_wm\other\live-list.vue success!
+Convert yb_wm\other\mg-pay.vue success!
+Convert yb_wm\other\rwzx.vue success!
+Convert yb_wm\other\scyl.vue success!
+Convert yb_wm\other\sq-login.vue success!
+Convert yb_wm\other\web-view.vue success!
+Convert yb_wm\other\zfyl.vue success!
+Convert components\common\functionCmp\nav-tab.vue success!
+Convert components\common\functionCmp\notice-group.vue success!
+Convert components\common\functionCmp\rich-text.vue success!
+Convert components\common\functionCmp\swiper.vue success!
+Convert components\goods\store\store-info.vue success!
+Convert components\third\ls-swiper\index.vue success!
+Convert component components\uParse\src\wxParse.js success!
+Convert yb_wm\index\components\dn-order.vue success!
+Convert yb_wm\index\components\my-dnorder.vue success!
+Convert yb_wm\index\components\my-order.vue success!
+Convert yb_wm\my\address\address.vue success!
+Convert yb_wm\my\address\index.vue success!
+Convert yb_wm\my\coupon\center.vue success!
+Convert yb_wm\my\coupon\coupon-dl.vue success!
+Convert yb_wm\my\coupon\dh.vue success!
+Convert yb_wm\my\coupon\my.vue success!
+Convert yb_wm\my\coupon\use-coupon.vue success!
+Convert yb_wm\my\integral\details.vue success!
+Convert yb_wm\my\integral\goods-list.vue success!
+Convert yb_wm\my\integral\integral-record.vue success!
+Convert yb_wm\my\integral\my-integral.vue success!
+Convert yb_wm\my\integral\order-dl.vue success!
+Convert yb_wm\my\integral\shop-index.vue success!
+Convert yb_wm\my\integral\zi-list.vue success!
+Convert yb_wm\my\other\bjzl.vue success!
+Convert yb_wm\my\other\bzzx.vue success!
+Convert yb_wm\my\other\collection.vue success!
+Convert yb_wm\my\other\gywm.vue success!
+Convert yb_wm\my\other\gywmtwo.vue success!
+Convert yb_wm\my\other\kf.vue success!
+Convert yb_wm\my\other\kfz.vue success!
+Convert yb_wm\my\other\ptxx.vue success!
+Convert yb_wm\my\signin\index.vue success!
+Convert yb_wm\my\signin\my-coupon.vue success!
+Convert yb_wm\my\signin\my-signin.vue success!
+Convert yb_wm\order\coupon-bag\gmjl.vue success!
+Convert yb_wm\order\coupon-bag\list.vue success!
+Convert yb_wm\order\coupon-bag\qbxq.vue success!
+Convert yb_wm\order\coupon-bag\qrdd.vue success!
+Convert yb_wm\order\other\custom.vue success!
+Convert yb_wm\order\other\smjh.vue success!
+Convert yb_wm\order\vip\czz.vue success!
+Convert yb_wm\order\vip\open.vue success!
+Convert yb_wm\order\vip\wkk-ls-swiper-default.vue success!
+Convert yb_wm\order\vip\wkk.vue success!
+Convert yb_wm\other\info\detail.vue success!
+Convert yb_wm\other\info\index.vue success!
+Convert yb_wm\other\recharge\index.vue success!
+Convert yb_wm\other\recharge\smzf.vue success!
+Convert yb_wm\other\recharge\yemx.vue success!
+Convert yb_wm\other\recharge\yesy.vue success!
+Convert yb_wm\shop\ffmode\goods.vue success!
+Convert yb_wm\shop\ffmode\order-dl.vue success!
+Convert yb_wm\shop\ffmode\pay-order.vue success!
+Convert yb_wm\shop\in\car.vue success!
+Convert yb_wm\shop\in\dmf.vue success!
+Convert yb_wm\shop\in\goods.vue success!
+Convert yb_wm\shop\in\indd.vue success!
+Convert yb_wm\shop\in\order-dl.vue success!
+Convert yb_wm\shop\in\pay-order.vue success!
+Convert yb_wm\shop\in\syorder-dl.vue success!
+Convert yb_wm\shop\out\bz.vue success!
+Convert yb_wm\shop\out\goods-dl.vue success!
+Convert yb_wm\shop\out\pay-order.vue success!
+Convert yb_wm\shop\search\out.vue success!
+Convert yb_wm\shop\select\index.vue success!
+Convert yb_wm\shop\select\select.vue success!
+Convert components\uParse\src\components\wxParseAudio.vue success!
+Convert components\uParse\src\components\wxParseImg.vue success!
+Convert components\uParse\src\components\wxParseTemplate0.vue success!
+Convert components\uParse\src\components\wxParseTemplate1.vue success!
+Convert components\uParse\src\components\wxParseTemplate10.vue success!
+Convert components\uParse\src\components\wxParseTemplate11.vue success!
+Convert components\uParse\src\components\wxParseTemplate2.vue success!
+Convert components\uParse\src\components\wxParseTemplate3.vue success!
+Convert components\uParse\src\components\wxParseTemplate4.vue success!
+Convert components\uParse\src\components\wxParseTemplate5.vue success!
+Convert components\uParse\src\components\wxParseTemplate6.vue success!
+Convert components\uParse\src\components\wxParseTemplate7.vue success!
+Convert components\uParse\src\components\wxParseTemplate8.vue success!
+Convert components\uParse\src\components\wxParseTemplate9.vue success!
+Convert components\uParse\src\components\wxParseVideo.vue success!
+
+转换完成: 
+耗时：6844ms
+当前转换模式：【Hbuilder X】，生成HbuilderX项目。
+优点：上手快，项目结构较简单；
+缺点：资源路径会因为表达式而无法全部被修复(“可能”需手动修复)
+
+注意：
+1.当看到"image漏网之鱼"，意味着您"可能"，“可能”，记住是“可能”，但不一定需要手动调整对应代码(以实际编译运行为准)，当image标签的src属性是含变量或表达式，工具还无法做到100%转换，需要手动修改为相对/static目录的路径
+
+
+
+注意!!! 
+注意!!! 
+注意!!!
+当前项目可能是uniapp编译后的微信小程序项目，暂不支持转换，转换后也非完整项目！！！
+
+
+
+日志说明：
+1. image漏网之鱼 --> 为HbuilderX模式时，需要将资源移动到static，并且修复相应文件路径，有可能src为网络文件，有可能为变量或表达式，可能会导致转换后文件找不到，因此提示一下
+修复提示：编译时，如有报错就将对应位置修复即可(虽然目前uni-app有类似的支持，似乎并不完善)
+
+2. 命名替换 --> 小程序里对于属性名基本没什么限制，如id能做属性名，data下面的变量和函数名还能重名，但这些在uni-app里是不支持的，因此做了相关替换，并记录日志，也许组件在外部调用时，函数名被改而因此报错时，请查看答疑文档

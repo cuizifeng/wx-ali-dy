@@ -1,0 +1,70 @@
+.l-container{
+	background-color: #FFFFFF;
+	padding: 0 30rpx;
+}
+
+
+.l-chat-list-item{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 20rpx 0;
+}
+
+.l-chat-list-avatar,
+.l-chat-img-avatar{
+	width: 80rpx;
+	height: 80rpx;
+	border-radius: 50%;
+}
+
+.l-chat-list-avatar{
+	margin-right: 26rpx;
+}
+
+.l-chat-list-content{
+	width: calc(100% - 106rpx);
+	height: 100%;
+}
+
+.l-clc-view{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.l-clcv-content{
+	width: calc(100% - 260rpx);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.l-clcv-sub{
+	min-width: 240rpx;
+	white-space: nowrap;
+	display: flex;
+	font-size: 24rpx;
+	color: #999999;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.l-clc-view-1{
+	font-size: 36rpx;
+	color: #000000;
+}
+
+
+.l-clc-view-2{
+	font-size: 28rpx;
+	color: #666666;
+}
+
+.l-clcv-bag{
+	padding: 4rpx 14rpx;
+	background-color: red;
+	color: #FFFFFF;
+	border-radius: 30rpx;
+}
