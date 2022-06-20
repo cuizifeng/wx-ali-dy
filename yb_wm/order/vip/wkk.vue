@@ -323,15 +323,12 @@ export default {
       function (
         e) {
         return e.level == t.user.level
-      })), this.type = 2, setNB(), setNT("会员中心"), this.getVipdata()) : this.isload = !0
-
-
-
+      })), this.type = 2, setNB(), setNT("会员中心")) : this.isload = !0
   },
+
   computed: {
     ...mapState({
       vipset: function (t) {
-        console.log(t, '99999999999999');
         return t.config.vipset
       }
     }),
@@ -387,9 +384,7 @@ export default {
         })
       }
     },
-    getVipdata: function () {
-      var t = this;
-    },
+
     lschange: function (t) {
       this.xzdjinfo = t, this.qyarr.btnList = t.rightsList.map((function (t) {
         return {
@@ -410,7 +405,7 @@ export default {
             now: 1
           }), t.swcurrent = res.findIndex((function (e) {
             return e.level == t.user.level
-          })), t.vipInfo = res[t.swcurrent], t.getVipdata()))
+          })), t.vipInfo = res[t.swcurrent]))
         t.showloading = false;
       })
     },

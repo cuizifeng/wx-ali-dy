@@ -43,8 +43,14 @@
         </view>
       </view>
     </view>
-
+    <!-- #ifdef MP-WEIXIN -->
     <view class="goHome" @click="gozl"> {{userinfo == "" ? '完善资料更多优惠' : '返回首页'}}</view>
+    <!-- #endif  -->
+
+    <!--  #ifdef MP-ALIPAY -->
+    <view class="goHome" @click="goHome"> 返回首页</view>
+    <!-- #endif -->
+
   </view>
 </template>
 
@@ -168,6 +174,12 @@ export default {
       })
     },
 
+    goHome() {
+      uni.reLaunch({
+        url: "/pages/tabbar/my/index"
+      })
+    },
+
     // 授权
     // 获取用户详细信息, 可以获取到说明已经授权过, 直接拿到用户信息
     changeLogin() {
@@ -225,10 +237,6 @@ export default {
           }
         }
       });
-
-
-
-
     },
 
   },

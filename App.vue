@@ -1,5 +1,5 @@
 <script>
-import { getSystemInfo, setUpdateManager } from '@/utils/miniUtils.js'
+import { setUpdateManager } from '@/utils/miniUtils.js'
 export default {
   globalData: {
     siteInfo: '',
@@ -98,11 +98,10 @@ export default {
   onShow: function () {
 
     // #ifdef MP-WEIXIN
-    getSystemInfo() //获取胶囊位置
     setUpdateManager() //更新版本
     // #endif
     //#ifdef MP-ALIPAY
-    getSystemInfo() //获取胶囊位置
+    setUpdateManager() //更新版本
     //#endif
     // var e = a(c.default.mark(function e(t) {
     // 	var n;

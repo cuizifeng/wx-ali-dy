@@ -239,6 +239,7 @@ export default {
     },
     operation: function (t) {
       console.log('t: ', t);
+      //  order_cancel__order
       var e = this;
       var a, o;
       e.orderInfo = t.co;
@@ -312,6 +313,9 @@ export default {
             }))
           })
           break;
+        case 'sqtk':
+          e.qxdd();
+          break
         default:
           // 29
           break;
@@ -330,9 +334,9 @@ export default {
       modal("您确认取消订单吗？").then(d => {
         this.$api.order_cancel__order({
           orderId: e.orderInfo.id,
+          refund: e.orderInfo.id,
           note: t && e.qxyy || ""
         }).then(res => {
-          console.log('resresrfs: ', res);
           e.refresh()
         })
       }).catch(e => {

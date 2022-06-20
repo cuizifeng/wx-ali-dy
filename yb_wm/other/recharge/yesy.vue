@@ -1,6 +1,6 @@
 <template>
   <view class="bf mh100 ">
-    <navBar :title="'申请'" :backgroundColor="'linear-gradient(227deg, #FAC763 0%, #F9BD40 100%)'" :wordColor="'#fff'"></navBar>
+    <navBar :title="'余额'" :backgroundColor="'linear-gradient(227deg, #FAC763 0%, #F9BD40 100%)'" :wordColor="'#fff'"></navBar>
     <view class="yytop t-c " style="border-bottom:24rpx solid #F6F6F6;">
       <view class="">{{'可用'+system.custom.balance}}</view>
       <view class="wei f60 mb30 " :style="'color:'+tColor+';'">
@@ -15,8 +15,8 @@
       </mg-cell>
       <mg-cell arrow="1" @tab="go({url:'yemx'})" btt="消费记录" bttc="f30" class="" cname="p43 c0" ftc="f28" last="1" vueId="b0f0f6e8-2">
       </mg-cell>
-      <mg-cell arrow="1" @tab="cjwt" btt="常见问题" bttc="f30" class="" cname="p43 c0" ftc="f28" last="1" vueId="b0f0f6e8-3">
-      </mg-cell>
+      <!-- <mg-cell arrow="1" @tab="cjwt" btt="常见问题" bttc="f30" class="" cname="p43 c0" ftc="f28" last="1" vueId="b0f0f6e8-3">
+      </mg-cell> -->
     </view>
   </view>
 </template>

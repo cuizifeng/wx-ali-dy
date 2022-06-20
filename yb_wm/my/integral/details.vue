@@ -216,15 +216,11 @@ export default {
       n.id = a,
       n.getSystem(),
       setNT("商城-商品详情"),
-      n.getData(), bus.$on("changeChoose", (function (e) {
+      n.getData(),
+      bus.$on("changeChoose", (function (e) {
         e.hasOwnProperty("addInfo") && n.refreshAddress(e.addInfo)
       }))
-    n.getData1();
-
-    // 获取要分享的商品 展示位
-    n.getShareContent()
-
-
+    // n.getData1();
   },
   // 修改分享连接地址等
   onShareAppMessage(res) {
@@ -325,22 +321,14 @@ export default {
         e.config = res;
       })
     },
-    // 获取分享要展示的内容
-    getShareContent() {
-      var e = this;
-      var o;
-      this.$api['integral-shop_goods__info']({
-        id: e.id
-      }).then(res => {
-        this.shareObj = res;
-      })
-    },
+
     getData: function () {
       var e = this;
       var o;
       this.$api['integral-shop_goods__info']({
         id: e.id
       }).then(res => {
+        e.shareObj = res;
         o = res, e.swiper.swiper[0].icon = o.icon, e.dlDatl = o, e.getLoginInfo();
         e.content = formatRichText(res.notice)
         //支付宝富文本需要解析

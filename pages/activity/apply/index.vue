@@ -25,7 +25,8 @@
         <view class="agreement">
           <view @click="setChecked">
             <radio :checked="checked" style="transform:scale(0.7);" color="#EA4702" /> 我已阅读并同意
-          </view> <text class="agreementText">《储值协议》</text>
+          </view>
+          <!-- <text class="agreementText">《储值协议》</text> -->
         </view>
       </view>
 

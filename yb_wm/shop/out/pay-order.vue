@@ -21,7 +21,7 @@
           <view class="f-y-c " slot="bd">
             <view class="f-g-0 f30 ">预留手机</view>
             <input v-model="params.userTel" class="f-g-1 weui-input t-r " maxlength="11" placeholder="请输入手机号" type="number" />
-            <sq-btn @refresh="setTel" cname="text-btn f24 ml20 p0" h="50" t="自动填写" type="2" :vueId="'870ed774-5'+','+'870ed774-4'" w="120"></sq-btn>
+            <!-- <sq-btn @refresh="setTel" cname="text-btn f24 ml20 p0" h="50" t="自动填写" type="2" :vueId="'870ed774-5'+','+'870ed774-4'" w="120"></sq-btn> -->
           </view>
         </mg-cell>
         <!-- <mg-agree v-model="agree" :color="tColor" p="7" :title="carInfo.sjxx.moreSet.selfName+'服务协议'" :value="agree" vueId="870ed774-6" v-if="ModeArr.length"></mg-agree> -->
@@ -476,7 +476,7 @@ export default {
 
     t.pcarList = o,
       t.params.storeId = t.carInfo.sjxx.shopData.id,
-      t.params.userTel = t.user.userTel,
+      t.params.userTel = t.user.userTel ? t.user.userTel : '',
       t.wmAddress = getApp().globalData.xzdzInfo || "",
       t.getOrderset(),
       t.getWmAddress(),
@@ -484,7 +484,6 @@ export default {
       t.getyhqArr(),
       bus.$on("payorder", (
         function (e) {
-          console.log(e, "eeeeeeeeeeeeeeeeeeeeeeeee");
           e.hasOwnProperty("hbInfo") && (1 == e.type ? (t.couponInfo.store = e.hbInfo || "", t.params
             .couponId.store = t.couponInfo.store ? t.couponInfo.store.id : "") : 2 == e.type && (t
               .couponInfo.platform = e.hbInfo || "", t.params.couponId.platform = t.couponInfo
@@ -780,7 +779,7 @@ export default {
       if (!t.yjrV.time) return message("请选择时间", 3);
       // if (2 != t.params.deliveryMode) {}
       if (!t.agree) return message("请阅读并同意服务协议", 3);
-      if (!isTelCode(t.params.userTel)) message("请输入合理的预留手机号", 3);
+      if (!isTelCode(t.params.userTel)) return message("请输入合理的预留手机号", 3);
 
       if (2 == t.params.deliveryMode && !t.params.userAddId) {
         message('未添加地址', 3);

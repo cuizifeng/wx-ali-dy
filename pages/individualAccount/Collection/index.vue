@@ -4,7 +4,7 @@
     <view class="coll">
       <view class="input_text">
         <view class="userName">
-          <image class="nameImg" src="https://yunbei.lianmengfu.net/xcxpic/icon/log.png" mode="aspectFit" />
+          <image class="nameImg" src="https://wlh-1307843985.cos.ap-beijing.myqcloud.com/yb_wm/1/2022/06/16/202206161439165508.png" mode="aspectFit" />
           <view class="name">{{shopinfo.name?shopinfo.name:'沐掌柜'}}</view>
         </view>
 
@@ -24,9 +24,9 @@
 
         <view class="switchPay">
           <view :class="['pay',payIndex == 2 ? 'active' : '']" @click="switchPay(2)">
-            <view class="payItem">
-              <image class="payItemImg1" src="https://yunbei.lianmengfu.net/xcxpic/icon/weixin.png" mode="aspectFit" />
-              <view class="payName">微信支付</view>
+            <view class="payItem" v-for="(item,index) in payArr" :key="index">
+              <image class="payItemImg1" :src="item.img" mode="aspectFit" />
+              <view class="payName">{{item.name}}</view>
             </view>
           </view>
           <view :class="['pay',payIndex==1 ? 'active' : '']" @click="switchPay(1)">
@@ -51,6 +51,10 @@
 import payPupup from "./components/payPupup.vue";
 import { message } from 'common/util';
 import getMath from "@/utils/math.js";
+import {
+  platform
+} from 'common/apiconfig';
+import { Tips } from "@/utils/miniUtils.js";
 export default {
   components: {
     payPupup,
@@ -79,11 +83,13 @@ export default {
         money: 0,
         id: 0
       },
+      payArr: [],
     }
   },
 
   onLoad(options) {
     this.init()
+    this.getPayArr()
   },
 
   onShow() {
@@ -97,6 +103,35 @@ export default {
     })
   },
   methods: {
+    getPayArr() {
+      var e = [];
+      "mini" == platform.appType ||
+        "weChat" == platform.appType ? e.push({
+          name: "微信支付",
+          value: "wx",
+          img: "https://yunbei.lianmengfu.net/xcxpic/icon/weixin.png",
+          img2: "wxb",
+          color: "#65B05B",
+          text: "更方便，更快捷"
+        }) : "ali" == platform.appType ? e.push({
+          name: "支付宝支付",
+          value: "zfb",
+          img: "https://wlh-1307843985.cos.ap-beijing.myqcloud.com/yb_wm/1/2022/06/17/202206171233295272.png",
+          img2: "ylbg",
+          color: "#1890ff",
+          text: "更方便，更快捷"
+        }) : "baidu" == platform.appType ? e.push({
+          name: "百度支付",
+          value: "baidu",
+          img: ""
+        }) : "toutiao" == platform.appType && e.push({
+          name: "头条支付",
+          value: "baidu",
+          img: ""
+        });
+
+      this.payArr = e;
+    },
     //初始化信息
     init() {
       uni.login({
@@ -153,7 +188,10 @@ export default {
             return message('请确认您的金额是否输入正确', 3)
           }
         }
+        // #ifdef MP-WEIXIN
         uni.requestSubscribeMessage({ tmplIds: ['vzLKV00ddeEMEPN772rbV4ZuSrTL9UviTCyZIZG17d4'] });
+        // #endif 
+
         this.$api.member_recharge__rule().then(res => {
           const { list } = res;
           this.RechargeList = []
@@ -261,6 +299,8 @@ export default {
               this.orderType
           })
         } else {
+
+          // #ifdef MP-WEIXIN
           uni.requestPayment({
             ...res.data,
             provider: 'wxpay',
@@ -271,6 +311,27 @@ export default {
               })
             },
           })
+          // #endif 
+
+          // #ifdef MP-ALIPAY
+          // .js
+          my.tradePay({
+            // 调用统一收单交易创建接口（alipay.trade.create），获得返回字段支付宝交易号trade_no
+            tradeNO: res.data.alipay_trade_create_response.trade_no,
+            success: (res) => {
+              if (res.resultCode == 9000) {
+                Tips({ title: res.memo, type: 5, url: "/pages/individualAccount/paymentSuccessful/index?orderId=" + event + "&payType=" + '' + "&orderType=" + this.orderType })
+              } else {
+                Tips({ title: res.memo, type: 5, url: "/pages/tabbar/index/index" })
+              }
+            },
+            fail: (res) => { }
+          });
+          // #endif
+
+
+
+
         }
 
 

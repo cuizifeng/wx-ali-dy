@@ -114,7 +114,7 @@
               <view class="orderName">{{item.name}}</view>
               <view class="itemPricr">
                 <view class="price">¥{{item.price}}</view>
-                <view class="sale">已出售0+</view>
+                <!-- <view class="sale">已出售0+</view> -->
               </view>
             </view>
           </view>
@@ -126,7 +126,7 @@
               <view class="orderName">{{item.name}}</view>
               <view class="itemPricr">
                 <view class="price">¥{{item.price}}</view>
-                <view class="sale">已出售0+</view>
+                <!-- <view class="sale">已出售0+</view> -->
               </view>
             </view>
           </view>
@@ -175,7 +175,6 @@ export default {
         name: '今日特惠',
         type: '/pages/tabbar/order/index'
       }],
-      contentTop: uni.getStorageSync('menuInfo').contentTop,
       leftView: false,//是否显示左侧按钮
       money: "",
       params: {
@@ -220,48 +219,43 @@ export default {
     fixedSet,
   },
   onLoad: function () {
-    // getCode().then(res => {
-    //   console.log(res, "---");
-    //   return
-    //   this.$api.login_login({
-    //     code: res
-    //   }).then(r => {
-    //     console.log(r, '66666666666666666');
-    //     this.users = r
-    //     this.userId = r.userId
-    //     uni.setStorageSync("userId", r.userId)
-    //     uni.setStorageSync("session_key", r.session_key)
-    //     this.userTel = r.userTel
-    //     console.log(this.users, "2")
-    //   })
-    // })
-    // return;
     // uniacid存到storag
     let uniacid = uni.getStorageSync('uniacid');
     if (!uniacid) {
       uni.setStorageSync('uniacid', 1);
     }
-    uni.login({
-      success: (res) => {
-        const { code } = res
-        console.log(code)
-        this.$api.login_login({
-          code: code
-        }).then(r => {
-          this.users = r
-          this.userId = r.userId
-          uni.setStorageSync("userId", r.userId)
-          uni.setStorageSync("session_key", r.session_key)
-          this.userTel = r.userTel
-        })
-      }
+    getCode().then(res => {
+      this.$api.login_login({
+        code: res
+      }).then(r => {
+        this.users = r
+        this.userId = r.userId
+        uni.setStorageSync("userId", r.userId)
+        uni.setStorageSync("session_key", r.session_key)
+        this.userTel = r.userTel
+        console.log(this.users, "2")
+      })
     })
 
 
-    // 获取门店列表
-    this.$api.shop_store__list({
+    // uni.login({
+    //   success: (res) => {
+    //     const { code } = res
+    //     this.$api.login_login({
+    //       code: code
+    //     }).then(r => {
+    //       this.users = r
+    //       this.userId = r.userId
+    //       uni.setStorageSync("userId", r.userId)
+    //       uni.setStorageSync("session_key", r.session_key)
+    //       this.userTel = r.userTel
+    //     })
+    //   }
+    // })
 
-    }).then(r => {
+
+    // 获取门店列表
+    this.$api.shop_store__list({}).then(r => {
       this.storeList = r;
       this.storename = r[0].name;
       this.storeposition = r[0].address;
@@ -274,7 +268,6 @@ export default {
           storeposition: this.storeposition,
           storeid: storeid
         }
-
       });
     });
 
@@ -430,6 +423,7 @@ page {
   display: flex;
   flex-direction: column;
   padding: 0rpx 30rpx;
+  background: #ffffff;
   .Rotation {
     width: 690rpx;
     height: 306rpx;

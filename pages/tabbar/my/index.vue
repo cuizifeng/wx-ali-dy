@@ -7,7 +7,7 @@
       <view class="membershipCard">
         <view class="membershipCard_top">
           <view class="membershipCard_top_left">
-            <image class="Img" style="background:#fff" :src="companyInfo.icon" mode="aspectFit" />
+            <image class="Img" :src="suerImg || system.icon" mode="aspectFit" />
             <view class="userName">
               <view class="user">{{vipset.brandName}}</view>
               <view class="user">{{vipset.serviceTel}}</view>
@@ -20,7 +20,7 @@
           <!-- <view class="growth"> <text>成长值668</text> <text>距黄金会员还需要1332</text> </view> -->
         </view>
       </view>
-
+      <!-- <button class="start" open-type="getAuthorize" scope="phoneNumber" @getAuthorize="getPhoneNumber" @error="errorPhoneNumber">授权手机号</button> -->
       <myList :list="darr"></myList>
 
       <view class="myList">
@@ -59,7 +59,7 @@
 import { isDistribution } from '@/api/my.js'
 import { mapActions, mapState } from 'vuex'
 import { mpShare, setNB, setNT } from 'common/util';
-import { showModal } from "@/utils/miniUtils.js"
+import { showModal, getSystemInfo } from "@/utils/miniUtils.js"
 import myList from './components/list.vue';
 export default {
   components: {
@@ -67,10 +67,10 @@ export default {
   },
   data() {
     return {
+      suerImg: 'https://yunbei.lianmengfu.net/web/static/yb_wm/1/2021/10/25/202110251106382871.png',
       title: '',//导航栏标题
       leftView: false,
-      contentTop: uni.getStorageSync('menuInfo').contentTop,
-
+      contentTop: '',
       myFunction: [
         {
           icon: 'https://yunbei.lianmengfu.net/xcxpic/icon/xiaofei.png',
@@ -172,24 +172,8 @@ export default {
       this.vipInfo = res[0]
     })
 
-    let uniacid = uni.getStorageSync('uniacid');
-    if (!uniacid) {
-      uni.setStorageSync('uniacid', 1);
-    }
-    uni.login({
-      success: (res) => {
-        const { code } = res
-        console.log(code)
-        this.$api.login_login({
-          code: code
-        }).then(r => {
-          this.users = r
-          this.userId = r.userId
-          uni.setStorageSync("userId", r.userId)
-          uni.setStorageSync("session_key", r.session_key)
-          this.userTel = r.userTel
-        })
-      }
+    getSystemInfo().then(res => {
+      this.contentTop = res.contentTop;
     })
   },
   onShow: function () {
@@ -198,8 +182,12 @@ export default {
       function (
         e) {
         return e.level == t.user.level
-      })), this.type = 2, setNB(), setNT("会员中心"), this.getVipdata()) : this.isload = !0
-
+      })), this.type = 2, setNB(), setNT("会员中心")) : this.isload = !0
+    this.refreshUser({
+      nomask: 1,
+      get: 1,
+      now: 1
+    })
     // setTimeout(() => {
     //   if (!this.user.portrait) {
     //     showModal({ content: '为了您更好的体验，请您先登录', type: 5, url: '/pages/user/userLogin/index' })
@@ -280,9 +268,6 @@ export default {
     },
 
     ...mapActions(["getConfig"]),
-    getVipdata: function () {
-      var t = this;
-    },
     lschange: function (t) {
       this.xzdjinfo = t, this.qyarr.btnList = t.rightsList.map((function (t) {
         return {
@@ -302,7 +287,7 @@ export default {
             now: 1
           }), t.swcurrent = res.findIndex((function (e) {
             return e.level == t.user.level
-          })), t.vipInfo = res[t.swcurrent], t.getVipdata()))
+          })), t.vipInfo = res[t.swcurrent]))
         t.showloading = false;
       })
     },
@@ -320,6 +305,38 @@ export default {
         t.go({
           url: "open"
         });
+      })
+    },
+
+
+
+
+    getPhoneNumber(e) {
+      my.getPhoneNumber({
+        success: (res) => {
+          console.log('授权成功', res)
+        },
+        fail: (err) => {
+          console.log('授权失败', err)
+        }
+      })
+    },
+    // 拒绝手机号
+    errorPhoneNumber(e) {
+      console.log('拒绝授权', e)
+      this.exitAccount()
+    },
+
+    // 退出登录 功能
+    exitAccount() {
+      my.confirm({
+        title: '提示',
+        content: '取消授权，可能会使部分功能无法使用，或页面信息不完整',
+        confirmButtonText: '重新授权',//确定按钮
+        cancelButtonText: '我知道了',//取消按钮
+        success: (res) => {
+          //res打印出来是{confirm:true}
+        },
       })
     },
   },
@@ -412,6 +429,7 @@ export default {
         .Img {
           width: 100rpx;
           height: 100rpx;
+          background: #fff;
           box-shadow: 0px 0px 5px 0px rgba(221, 180, 102, 0.3);
           border-radius: 50rpx;
         }

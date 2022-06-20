@@ -45,6 +45,7 @@
   </view>
 </template>
 <script>
+import { getSystemInfo } from '@/utils/miniUtils.js'
 export default {
   props: {
     title: { //标题
@@ -70,18 +71,29 @@ export default {
     isType: { //头部样式
       type: Number | String,
       default: 1
-    }
+    },
   },
   data() {
     return {
-      statusBarHeight: uni.getStorageSync('menuInfo').statusBarHeight,//状态栏的高度（可以设置为顶部导航条的padding-top）
-      menuWidth: uni.getStorageSync('menuInfo').menuWidth,
-      menuHeight: uni.getStorageSync('menuInfo').menuHeight,
-      menuBorderRadius: uni.getStorageSync('menuInfo').menuBorderRadius,
-      menuRight: uni.getStorageSync('menuInfo').menuRight,
-      menuTop: uni.getStorageSync('menuInfo').menuTop,
-      contentTop: uni.getStorageSync('menuInfo').contentTop,
+      contentTop: '',
+      statusBarHeight: '',//状态栏的高度（可以设置为顶部导航条的padding-top）
+      menuWidth: '',
+      menuHeight: '',
+      menuBorderRadius: '',
+      menuRight: '',
+      menuTop: '',
     }
+  },
+  mounted() {
+    getSystemInfo().then(res => {
+      this.contentTop = res.contentTop;
+      this.statusBarHeight = res.statusBarHeight;//状态栏的高度（可以设置为顶部导航条的padding-top）
+      this.menuWidth = res.menuWidth;
+      this.menuHeight = res.menuHeight;
+      this.menuBorderRadius = res.menuBorderRadius;
+      this.menuRight = res.menuRight;
+      this.menuTop = res.menuTop;
+    })
   },
   methods: {
     goToBack() {
@@ -194,7 +206,12 @@ export default {
     -webkit-box-orient: vertical; /* 设置或检索伸缩盒对象的子元素的排列方式 */
   }
   .sarchbox {
+    /* #ifdef MP-WEIXIN */
     width: 439rpx;
+    /* #endif */
+    /* #ifdef  MP-ALIPAY */
+    width: 380rpx;
+    /* #endif */
     height: 60rpx;
     display: flex;
     align-items: center;

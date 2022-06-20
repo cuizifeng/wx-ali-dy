@@ -13,9 +13,21 @@
             }
         },
         {
+            "path": "pages/tabbar/order/index",
+            "style": {
+                "navigationStyle": "custom",
+                "enablePullDownRefresh": false,
+                "mp-alipay": {
+                    "transparentTitle": "always",
+                    "titlePenetrate": "YES"
+                }
+            }
+        },
+        {
             "path": "pages/tabbar/shop/index",
             "style": {
                 "navigationStyle": "custom",
+                "enablePullDownRefresh": false,
                 "mp-alipay": {
                     "transparentTitle": "always",
                     "titlePenetrate": "YES"
@@ -26,16 +38,7 @@
             "path": "pages/tabbar/my/index",
             "style": {
                 "navigationStyle": "custom",
-                "mp-alipay": {
-                    "transparentTitle": "always",
-                    "titlePenetrate": "YES"
-                }
-            }
-        },
-        {
-            "path": "pages/tabbar/order/index",
-            "style": {
-                "navigationStyle": "custom",
+                "enablePullDownRefresh": false,
                 "mp-alipay": {
                     "transparentTitle": "always",
                     "titlePenetrate": "YES"
@@ -182,7 +185,11 @@
                 {
                     "path": "recharge/yesy",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -250,7 +257,11 @@
                     "path": "out/pay-order",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -352,7 +363,11 @@
                 {
                     "path": "coupon/my",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {

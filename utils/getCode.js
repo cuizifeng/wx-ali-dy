@@ -13,15 +13,13 @@ export const getCode = function () {
             case 'mini':
                 uni.login({
                     success: (res) => {
-                        login(res).then(ev => {
-                            resolve(ev)
-                        })
+                        resolve(res.code)
                     }
                 })
                 break;
             case 'ali':
                 my.getAuthCode({
-                    scopes: 'auth_user',
+                    scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
                     success: (auth) => {
                         resolve(auth.authCode)
                     },

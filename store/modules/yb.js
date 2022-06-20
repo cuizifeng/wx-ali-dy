@@ -6,6 +6,7 @@ import {
 import {
     toast
 } from 'lib/utils/fn';
+import { getCode } from "@/utils/getCode.js";
 export default {
     state: {
         dndcConfig: {},
@@ -324,6 +325,21 @@ export default {
             var o, i, a;
             o = e.commit, i = e.state, a = r.length > 1 && void 0 !== r[1] ? r[1] : {};
             if (!i.user.id) {
+                getCode().then(code => {
+                    api.login_login({
+                        code: code,
+                        inviteId: a.inviteId || ""
+                    }).then(res => {
+                        o("setUser", res);
+                        //#ifdef MP-WEIXIN
+                        if (!res.session_key) {
+                            toast('请检查小程序秘钥等相关配置');
+                        }
+                        getApp().globalData.session_key = res.session_key;
+                        //#endif
+                    })
+                })
+                return
                 uni.login({
                     success: function (e) {
                         api.login_login({

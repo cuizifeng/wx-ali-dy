@@ -1,13 +1,12 @@
 <template>
   <view>
-    <navBar :title="'全员销售'" :backgroundColor="'#0000'" :wordColor="'#000'">
-      <view slot="userVip" class="distributorBg"></view>
-    </navBar>
+    <navBar :title="'全员销售'" :backgroundColor="'linear-gradient(133deg, #fec745 0%, #f9aa0c 100%)'" :wordColor="'#000'"></navBar>
+    <!-- <view class="distributorBg"></view> -->
     <view class="memberBox">
-      <view class="membershipCard">
+      <view class="membershipCard" v-if="user.portrait || user.userName">
         <view class="membershipCard_top">
           <view class="membershipCard_top_left">
-            <image class="Img" style="background:#fff" :src="user.portrait" mode="aspectFill" />
+            <image class="Img" :src="user.portrait" mode="aspectFill" />
             <view class="userName">
               <view class="usera">{{user.userName?user.userName:'-'}}</view>
               <!-- <view class="user">1234567890</view> -->
@@ -182,7 +181,7 @@ page {
           font-size: 32rpx;
           font-family: PingFang-SC-Bold, PingFang-SC;
           font-weight: bold;
-          color: #ffffff;
+          color: #000;
           padding: 5rpx 10rpx;
         }
         .user {

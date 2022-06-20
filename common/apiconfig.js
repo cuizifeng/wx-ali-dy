@@ -3,7 +3,19 @@ export const uploadUrl = BASEURL + '/v1/upload/image';
 export const RefreshUrl = '/v1/token/refresh'; //刷新token
 export const loginUrl = '/v1/token/wxapp'; //登录url
 export const PROJECT = 'MADEHOME_Wxapp';
-export const platform = 'mini';
+export const platform = {
+    // #ifdef MP-WEIXIN
+    appType: 'mini',
+    // #endif 
+
+    // #ifdef MP-ALIPAY
+    appType: 'ali',
+    // #endif
+
+    // #ifdef MP-TOUTIAO
+    appType: 'toutiao',
+    // #endif
+}
 export const CODE = {
     code: 'code',
     auth: 'data',
@@ -13,8 +25,6 @@ export const CODE = {
     frequent: false,//频繁点击false关闭
 }
 export function middleWare(options) {
-    // console.log(options.data, options.data.ct, "options.data , options.data.ct=====================================================================");
-
     options.header = {
         "content-type": options.data && options.data.ct ? "application/json" : "application/x-www-form-urlencoded",
 

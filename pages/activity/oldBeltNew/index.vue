@@ -21,7 +21,7 @@
         <view class="withdrawal" @click="withdrawal">提现</view>
         <view class="withdrawalLog" @click="withdrawalLog">
           提现记录
-          <image class="logIcon" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou2.png" mode="" />
+          <image class="logIcon" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou2.png" mode="aspectFit" />
         </view>
       </view>
 
@@ -43,11 +43,11 @@
         <view class="addUser">共<text class="addNum">{{invitationIncome.people}}</text>人参加</view>
         <view class="list">本周榜单</view>
         <view class="time" @click="goWeek('本周榜单',1)">{{getRank.weekStart}}-{{getRank.weekEnd}}（本周一至今日排名）
-          <image class="goAll" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou3.png" mode="" />
+          <image class="goAll" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou3.png" mode="aspectFit" />
         </view>
         <view class="list" style="margin-top:27px">上周榜单</view>
         <view class="time" @click="goWeek('上周榜单',2)">{{getRank.lastWeekStart}}-{{getRank.lastWeekEnd}}（本周一至今日排名）
-          <image class="goAll" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou3.png" mode="" />
+          <image class="goAll" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou3.png" mode="aspectFit" />
         </view>
       </view>
 

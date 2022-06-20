@@ -2,14 +2,14 @@
   <view>
     <navBar :title="'分销订单'" :backgroundColor="'#fff'" :wordColor="'#333333'"></navBar>
     <view class="title">
-      <view :class="[params.type == 1 ? 'active' : '']" @click="switchTab(1)">已入账</view>
-      <view :class="[params.type == 2 ? 'active' : '']" @click="switchTab(2)">在路上</view>
+      <view :class="[params.type == 1 ? 'active' : '']" @click="switchTab(1)">在路上</view>
+      <view :class="[params.type == 2 ? 'active' : '']" @click="switchTab(2)">已入账</view>
     </view>
 
     <view class="with">
       <view class="item" v-for="(item,index) in list" :key="index">
         <view class="arrs">
-          <view class="name">{{item.distributionName}}</view>
+          <view class="name">{{item.userName}}</view>
           <view class="time">{{item.createdAt}}</view>
         </view>
         <view class="arrs">
@@ -35,7 +35,7 @@ export default {
         page: 1,
         size: 20,
         type: 1, // 1冻结(在路上),2正常(已入账)
-        item: 4,//1.外卖2店内3快餐4收银
+        // item: 4,//1.外卖2店内3快餐4收银
       },
 
       list: []

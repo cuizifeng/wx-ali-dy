@@ -7,10 +7,16 @@
       </view>
     </view>
     <view class="snbtnc ">
-      <!-- @getAuthorize="onGetAuthorize" -->
-      <button @click="getUserInfo" class="btni cf f-c f28 " :openType="api.platform=='ali'?'getAuthorize':'getUserInfo'" scope="userInfo" :style="'background:'+tColor+';'+'border-color:'+tColor+';'">用户登录</button>
 
-      <button @click="switchTab" class="btni bf f-c f28 " :style="'border-color:'+tColor+';'+'color:'+tColor+';'">取消</button>
+      <!-- #ifdef MP-WEIXIN -->
+      <button @click="getUserInfo" class="btni cf f-c f28 " :openType="getUserInfo" scope="userInfo" :style="'background:'+tColor+';'+'border-color:'+tColor+';'">用户登录</button>
+      <!-- #endif -->
+
+      <!-- #ifdef MP-ALIPAY-->
+      <button class="btni cf f-c f28 " open-type="getAuthorize" scope="userInfo" @getAuthorize="onGetAuthorize" @error="onAuthError" :style="'background:'+tColor+';'+'border-color:'+tColor+';'">用户登录 </button>
+      <!-- #endif -->
+
+      <view @click="switchTab" class="btni bf f-c f28 " :style="'border-color:'+tColor+';'+'color:'+tColor+';'">取消</view>
     </view>
   </view>
 </template>
@@ -76,50 +82,50 @@ export default {
         }
       });
     },
-    mpGetUserInfo: function (t) {
-      return;
-      var n = this;
-      if (!this.loading)
-        if (this.loading = !0, console.log("mpGetUserInfo", t), "getUserInfo:ok" == t.detail.errMsg) {
-          var s = t.detail.userInfo.avatarUrl,
-            r = t.detail.userInfo.nickName,
-            a = this.uId;
-          this.refreshUser({
-            storeId: this.storeid,
-            portrait: s,
-            userName: r,
-            userId: a,
-            now: 1
-          }).then((function (e) {
-            message("登录成功", 1, 1e3), swnb(1e3)
-          })).catch((function () {
-            n.loading = !1
-          }))
-        } else this.loading = !1, uni.showModal({
-          title: "温馨提示",
-          content: "获取头像等信息失败",
-          showCancel: !1
-        })
-    },
-    onGetAuthorize: function (e) {
-      var t = this;
+
+    // 授权成功回调
+    onGetAuthorize() {
+      const that = this;
       my.getOpenUserInfo({
-        fail: function (e) { },
-        success: function (e) {
-          var n = JSON.parse(e.response).response;
-          t.refreshUser({
-            storeId: t.storeid,
-            portrait: n.avatar,
-            userName: n.nickName,
-            userId: t.uId,
+        fail: res => { console.log(res); },
+        success: res => {
+          const userInfo = JSON.parse(res.response).response; // 以下方的报文格式解析两层 response
+          that.refreshUser({
+            storeId: 1,
+            portrait: userInfo.avatar,
+            userName: userInfo.nickName,
             now: 1
           }).then((function (e) {
-            // message("登录成功", 1, 1e3), swnb(1e3)
-            this.switchTab()
+            if (e.code == 1) {
+              Tips({ title: '登录成功，正在跳转...', type: 5, url: '/pages/tabbar/my/index' })
+            }
           }))
-        }
+        },
+      });
+    },
+    // 授权失败回调
+    onAuthError() {
+      this.exitAccount()
+    },
+
+    // 退出登录 功能
+    exitAccount() {
+      const that = this;
+      my.confirm({
+        title: '提示',
+        content: '取消授权，可能会使部分功能无法使用，或页面信息不完整',
+        confirmButtonText: '重新授权',//确定按钮
+        cancelButtonText: '我知道了',//取消按钮
+        success: (res) => {
+          if (res.confirm) {
+            that.onGetAuthorize()
+          }
+        },
       })
     },
+
+
+
     mpGetphonenumber: function (t) {
       var n = this;
       if ("getPhoneNumber:ok" == t.detail.errMsg) {
@@ -145,8 +151,8 @@ export default {
       })
     },
     switchTab() {
-      uni.switchTab({
-        url: 'pages/tabbar/my/index'
+      uni.reLaunch({
+        url: '/pages/tabbar/my/index'
       })
     }
   }

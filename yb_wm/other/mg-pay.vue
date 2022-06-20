@@ -75,6 +75,7 @@ import {
 import {
   platform
 } from 'common/apiconfig';
+import { Tips } from "@/utils/miniUtils.js";
 import {
   mapState,
   mapActions
@@ -179,26 +180,26 @@ export default {
     },
     getPayArr: function () {
       var e = [];
-      "mini" == platform ||
-        "weChat" == platform ? e.push({
+      "mini" == platform.appType ||
+        "weChat" == platform.appType ? e.push({
           name: "微信支付",
           value: "wx",
           img: "",
           img2: "wxb",
           color: "#65B05B",
           text: "更方便，更快捷"
-        }) : "ali" == platform ? e.push({
+        }) : "ali" == platform.appType ? e.push({
           name: "支付宝支付",
           value: "zfb",
           img: "",
           img2: "ylbg",
           color: "#1890ff",
           text: "更方便，更快捷"
-        }) : "baidu" == platform ? e.push({
+        }) : "baidu" == platform.appType ? e.push({
           name: "百度支付",
           value: "baidu",
           img: ""
-        }) : "toutiao" == platform && e.push({
+        }) : "toutiao" == platform.appType && e.push({
           name: "头条支付",
           value: "baidu",
           img: ""
@@ -258,7 +259,6 @@ export default {
     formSubmit: function (t) {
       var n = this;
       var i, u;
-      //   console.log(JSON.stringify(n.payObj), "========================n.payObjn.payObjn.payObj==========================");
       i = deepCopy(n.payObj);
       // 余额付 
       if ("ye" == t.detail.value.radiogroup) {
@@ -270,8 +270,11 @@ export default {
       if (1 == n.payObj.orderType && n.jjmbxx) {
         return n.requestSM("payOrder");
       }
+
       this.$api.pay_pay(i).then(res => {
         if ("ye" != t.detail.value.radiogroup) {
+
+          // #ifdef MP-WEIXIN
           uni.requestPayment({
             ...res.data,
             provider: n.provider,
@@ -280,26 +283,28 @@ export default {
               uni.reLaunch({
                 url: "/pages/individualAccount/paymentSuccessful/index?orderId=" + i.orderId + "&payType=" + '' + "&orderType=" + i.orderType
               })
-              // if (9e3 == t.resultCode) n.setzfcg(),
-              // 	n.go({
-              // 		t: 2,
-              // 		url: "../../shop/in/zfwc?payObj=" + encodeURIComponent(JSON.stringify(i))
-              // 	});
-              // else if (6001 == t.resultCode) {
-              // 	if (message("取消支付", 2), i.info.cancel) return;
-              // 	setTimeout((function() {
-              // 		n.go(i.info.go)
-              // 	}), 1e3)
-              // } else uni.showModal({
-              // 	title: "提示",
-              // 	content: JSON.stringify(t)
-              // });
-              // console.log("success:" + JSON.stringify(t))
             },
             complete: function (e) {
               //   console.log("paymentcomplete", e)
             }
           })
+          // #endif 
+
+          // #ifdef MP-ALIPAY
+          // .js
+          my.tradePay({
+            // 调用统一收单交易创建接口（alipay.trade.create），获得返回字段支付宝交易号trade_no
+            tradeNO: res.data.alipay_trade_create_response.trade_no,
+            success: (res) => {
+              if (res.resultCode == 9000) {
+                Tips({ title: res.memo, type: 5, url: "/pages/individualAccount/paymentSuccessful/index?orderId=" + i.orderId + "&payType=" + '' + "&orderType=" + i.orderType })
+              } else {
+                Tips({ title: res.memo, type: 5, url: "/yb_wm/index/order-index" })
+              }
+            },
+            fail: (res) => { }
+          });
+          // #endif
         } else {
           (n.setzfcg(), n.go({
             t: 2,
