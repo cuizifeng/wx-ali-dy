@@ -227,23 +227,17 @@ export default {
     }
   },
   onLoad(params) {
-    console.log(params, "==------");
-    console.log(Object.keys(params), '88888');
     if (Object.keys(params).length > 0 && Object.keys(params)[0] == 'obj') {
-      console.log(JSON.parse(params.obj), 444444444);
       let obj = JSON.parse(params.obj);
       this.youObj = obj;
       this.money = obj.pushmoney;
       this.zfid = obj.pushzfid;
-      console.log(obj.pushzfid, '111111111111');
-      console.log(obj.pushmoney, '1111111111111111');
     }
-    console.log(uni.getStorageSync('storeinfo').storeid, '888888888888888888');
     let uniacid = uni.getStorageSync('uniacid');
     if (!uniacid) {
       uni.setStorageSync('uniacid', 1);
     }
-    // console.log( getApp().globalData.session_key,'77777777777778888884444444444444');
+
     uni.login({
       success: (res) => {
         const { code } = res

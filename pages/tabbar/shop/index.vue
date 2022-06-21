@@ -56,15 +56,14 @@
       <nav-tab @changeTab="changeTab" :color="tColor" :tabs="tabs" :value="aIdx" vueId="16eaf28c-5"></nav-tab>
     </view>
     <goods-list class="" :qrcodeId="qrcodeId" :color="tColor" :list="dataList" vueId="16eaf28c-6"></goods-list>
-    <jzz bgcolor="transparent" class="" imgn="zwjf" :mygd="mygd" :nodata="dataList.length==0&&isget" vueId="16eaf28c-7">
-    </jzz>
+    <!-- <jzz bgcolor="transparent" class="" imgn="zwjf" :mygd="mygd" :nodata="dataList.length==0&&isget" vueId="16eaf28c-7">
+    </jzz> -->
     <load class="" vueId="16eaf28c-8" v-if="showLoading"></load>
   </view>
 </template>
 
 <script>
 import {
-  setNT,
   sljz
 } from "@/common/util";
 import navTab from "@/components/common/functionCmp/nav-tab.vue";
@@ -76,11 +75,9 @@ import entryButtonGroup from "@/components/drag/btn.vue";
 import goodsList from "./components/goods-list";
 import {
   mapActions,
-  mapState,
 } from 'vuex'
 import { invitationInsert } from "@/api/my.js";
 import { getCode } from "@/utils/getCode.js";
-import { getUrlParams } from '@/utils/miniUtils.js';
 export default {
   name: "jfsc",
   components: {
@@ -148,7 +145,7 @@ export default {
 
     e.getLoginInfo(), e.getSystem().then(function () {
       // setNT("商城")
-    }), e.getCategory(), e.getList(), e.getHotList();
+    }), e.getCategory(), e.newGetList(), e.getHotList();
     //存储扫描二维码进的id
     if (uni.getStorageSync('userId')) {
       if (options.userId) {
@@ -186,13 +183,13 @@ export default {
     },
     tabitem: function (t) {
       this.isget = this.mygd = !1, this.params.typeId = t.id || "", this.params.page = 1, this.dataList = [],
-        this.getList()
+        this.newGetList()
     },
     changeTab: function (t) {
       this.isget = this.mygd = !1, this.params.typeId = this.tabs[t].id, this.params.page = 1, this
-        .dataList = [], this.getList()
+        .dataList = [], this.newGetList()
     },
-    getList: function () {
+    newGetList: function () {
       var t = this;
       this.$api['integral-shop_goods__list']().then(res => {
         t.dataList = t.dataList.concat(res), t.isget = !0, t.mygd = t.params

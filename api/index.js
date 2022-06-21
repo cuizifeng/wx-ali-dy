@@ -14,3 +14,8 @@ export function goodRankType(data) {
 export function pageImage(data) {
     return request.get("channelApi/member/page-images", data);
 }
+
+//根据Appid获取uniacid
+export function uniacidIndex(data) {
+    return request.get("index/uniacid/index", data);
+}

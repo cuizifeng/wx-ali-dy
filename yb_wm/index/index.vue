@@ -350,11 +350,6 @@ export default {
     //   })
     // })
     // return;
-    // uniacid存到storag
-    let uniacid = uni.getStorageSync('uniacid');
-    if (!uniacid) {
-      uni.setStorageSync('uniacid', 1);
-    }
     uni.login({
       success: (res) => {
         const { code } = res

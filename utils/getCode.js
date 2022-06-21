@@ -1,4 +1,3 @@
-import api from '@/lib/api';
 export const setType = {
     //#ifdef MP-WEIXIN
     TYPE: 'mini',
@@ -29,18 +28,23 @@ export const getCode = function () {
                 break;
         }
     })
-
 }
 
-function login(event) {
-    return new Promise(function (resolve, reject) {
-        api.login_login({
-            code: event.code,
-        }).then(res => {
-            uni.setStorageSync('userId', res.userId)
-            getApp().globalData.session_key = res.session_key;
-            resolve(res)
-        })
-    })
 
+// 获取appid
+export const getAppId = function () {
+    return new Promise((resolve, reject) => {
+        switch (setType.TYPE) {
+            case 'mini':
+                const wxAppId = uni.getAccountInfoSync();
+                resolve({ appid: wxAppId.miniProgram.appId })
+                break;
+            case 'ali':
+                const appIdRes = my.getAppIdSync();
+                resolve({ appid: appIdRes.appId })
+                break;
+            default:
+                break;
+        }
+    })
 }

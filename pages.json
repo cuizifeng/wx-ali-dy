@@ -5,7 +5,7 @@
             "path": "pages/tabbar/index/index",
             "style": {
                 "navigationStyle": "custom",
-                "enablePullDownRefresh": true,
+                "enablePullDownRefresh": false,
                 "mp-alipay": {
                     "transparentTitle": "always",
                     "titlePenetrate": "YES"
@@ -87,13 +87,23 @@
                 {
                     "path": "order-index",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "getredoder",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 }
             ]
@@ -105,13 +115,22 @@
                     "path": "order-dl",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "coupon-bag/list",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -121,14 +140,23 @@
                 {
                     "path": "other/custom",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "vip/wkk",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -143,7 +171,11 @@
                     "path": "coupon-bag/qbxq",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -154,7 +186,11 @@
                     "path": "coupon-bag/qrdd",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 }
             ]
@@ -166,20 +202,33 @@
                     "path": "mg-pay",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "recharge/index",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "recharge/yemx",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -196,7 +245,11 @@
                     "path": "recharge/smzf",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -227,7 +280,11 @@
                     "path": "sq-login",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -241,7 +298,13 @@
                 {
                     "path": "withDrawal/record",
                     "style": {
-                        "onReachBottomDistance": 30
+                        "onReachBottomDistance": 30,
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": true,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 }
             ]
@@ -279,13 +342,22 @@
                     "path": "in/syorder-dl",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "in/goods",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -300,7 +372,11 @@
                     "path": "in/indd",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -323,28 +399,44 @@
                     "path": "out/goods-dl",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "select/index",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "search/out",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "select/select",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 }
             ]
@@ -389,14 +481,23 @@
                 {
                     "path": "integral/shop-index",
                     "style": {
-                        "navigationStyle": "custom"
+                        "navigationStyle": "custom",
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
                     "path": "integral/details",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {
@@ -407,7 +508,11 @@
                     "path": "integral/integral-record",
                     "style": {
                         "navigationStyle": "custom",
-                        "enablePullDownRefresh": false
+                        "enablePullDownRefresh": false,
+                        "mp-alipay": {
+                            "transparentTitle": "always",
+                            "titlePenetrate": "YES"
+                        }
                     }
                 },
                 {

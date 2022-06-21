@@ -109,7 +109,7 @@ export default {
   onLoad: function (t) {
     var e = this;
     var r;
-    setNT("商品详情"), t.scene ? (
+    t.scene ? (
       r = decodeURIComponent(t.scene).split(","),
       e.id = r[0],
       e.querystoreId = r[1]) : (e.id = t.gid, e.querystoreId = t.storeId),

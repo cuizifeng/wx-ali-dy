@@ -514,7 +514,7 @@ export const sljz = {
         }
     },
     onReachBottom: debounce((function (e) {
-        !this.mygd && this.isget && (this.isget = !1, this.getList())
+        !this.mygd && this.isget && (this.isget = !1, this.getList && this.getList())
     }), 300)
 }
 // 复制
@@ -552,7 +552,7 @@ export const request = function (r) {
             header: {
                 "content-type": r.ct ? "application/json" : "application/x-www-form-urlencoded",
                 appType: 'mini',
-                uniacid: "9",
+                uniacid: uni.getStorageSync("uniacid"),
                 module: "yb_wm",
                 userId: uni.getStorageSync("userId")
             },

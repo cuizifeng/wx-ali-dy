@@ -1,5 +1,7 @@
 <script>
 import { setUpdateManager } from '@/utils/miniUtils.js'
+import { getAppId } from '@/utils/getCode.js';
+import { uniacidIndex } from "@/api/index.js"
 export default {
   globalData: {
     siteInfo: '',
@@ -11,52 +13,18 @@ export default {
     let query = options.query;
     if (query?.code) {
       let uniacid = query.code;
-      console.log(uniacid, '456');
       uni.setStorageSync('uniacid', uniacid);
     } else {
-      uni.setStorageSync('uniacid', 1);
+      getAppId().then(res => {
+        uniacidIndex({ appid: res.appid }).then(res1 => {
+          if (res1.uniacid) {
+            uni.setStorageSync('uniacid', res1.uniacid);
+          } else {
+            uni.setStorageSync('uniacid', '1');
+          }
+        })
+      })
     }
-
-    // 路由对象 			
-    // if(uni.getStorageSync('userId')){
-    // 	console.log(options,'123');
-    // 	let query = options.query;  
-    // 	if(query.code){
-    // 		let uniacid = query.code;
-    // 		console.log(uniacid,'456');
-    // 		uni.setStorageSync('uniacid', uniacid);
-    // 	}else{
-    // 		uni.setStorageSync('uniacid', 1);
-    // 	}
-
-    // }else{
-
-    // 	uni.login({
-    // 		success: (res) => {
-    // 			const { code } = res
-    // 			console.log(code,'===========')
-    // 			this.$api.login_login({
-    // 				code: code
-    // 			}).then(r => {
-    // 				console.log(r);
-
-    // 				uni.setStorageSync("userId", r.userId)
-
-
-    // 				let query = options.query;
-    // 				if(query.code){
-    // 					let uniacid = query.code;
-    // 					console.log(uniacid,'456');
-    // 					uni.setStorageSync('uniacid', uniacid);
-    // 				}else{
-    // 					uni.setStorageSync('uniacid', 1);
-    // 				}
-    // 			})
-    // 		}
-    // 	})
-    // }
-
-
   },
 
   methods: {

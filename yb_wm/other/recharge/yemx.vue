@@ -49,7 +49,7 @@ export default {
     }
   },
   onLoad: function (t) {
-    this.getSystem(), setNT(this.system.custom.balance + "明细"), this.aIdx = t.idx || 0, this.changeTab(
+    this.getSystem(), this.aIdx = t.idx || 0, this.changeTab(
       this.aIdx)
   },
   mixins: [utilMixins, sljz],

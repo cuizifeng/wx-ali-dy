@@ -1,8 +1,8 @@
 <template>
   <view>
-    <navBar :title="'沐掌柜'" :leftView="leftView" :isType="2" :backgroundColor="titleBg" :wordColor="'#000'"></navBar>
+    <navBar :title="'沐掌柜'" :leftView="leftView" :isType="2" :backgroundColor="'rgba(255,192,70,1)'" :wordColor="'#000'"></navBar>
     <!-- 背景图 -->
-    <view class="bg" :style="{'top':Top}"></view>
+    <!-- <view class="bg" :style="{'top':Top}"></view> -->
 
     <view class="content">
       <!-- 轮播图 -->
@@ -218,41 +218,16 @@ export default {
   components: {
     fixedSet,
   },
-  onLoad: function () {
-    // uniacid存到storag
-    let uniacid = uni.getStorageSync('uniacid');
-    if (!uniacid) {
-      uni.setStorageSync('uniacid', 1);
-    }
-    getCode().then(res => {
-      this.$api.login_login({
-        code: res
-      }).then(r => {
-        this.users = r
-        this.userId = r.userId
-        uni.setStorageSync("userId", r.userId)
-        uni.setStorageSync("session_key", r.session_key)
-        this.userTel = r.userTel
-        console.log(this.users, "2")
-      })
-    })
-
-
-    // uni.login({
-    //   success: (res) => {
-    //     const { code } = res
-    //     this.$api.login_login({
-    //       code: code
-    //     }).then(r => {
-    //       this.users = r
-    //       this.userId = r.userId
-    //       uni.setStorageSync("userId", r.userId)
-    //       uni.setStorageSync("session_key", r.session_key)
-    //       this.userTel = r.userTel
-    //     })
-    //   }
+  onLoad() {
+    // getCode().then(res => {
+    //   this.$api.login_login({
+    //     code: res
+    //   }).then(r => {
+    //     this.userId = r.userId
+    //     uni.setStorageSync("userId", r.userId)
+    //     uni.setStorageSync("session_key", r.session_key)
+    //   })
     // })
-
 
     // 获取门店列表
     this.$api.shop_store__list({}).then(r => {
@@ -391,14 +366,13 @@ export default {
     this.Top = `-${e.scrollTop * 2}rpx`;
   },
 
-  onReachBottom: function () {
-    // console.log('==========1');
-    uni.stopPullDownRefresh()
-  },
+  //   onReachBottom: function () {
+  //     uni.stopPullDownRefresh()
+  //   },
 
-  onPullDownRefresh: function () {
-    uni.stopPullDownRefresh()
-  }
+  //   onPullDownRefresh: function () {
+  //     uni.stopPullDownRefresh()
+  //   }
 }
 </script>
 
@@ -673,6 +647,7 @@ page {
         background: #ffffff;
         box-shadow: 0rpx 2rpx 20rpx 0rpx rgba(0, 0, 0, 0.24);
         border-radius: 10rpx;
+        margin: 10rpx 0rpx;
         .itemImg {
           width: 335rpx;
           height: 270rpx;

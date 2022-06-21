@@ -36,7 +36,7 @@ export default {
   onLoad: function (e) {
     var t = this;
     this.getSystem().then((function () {
-      setNT(t.system.custom.balance)
+      //   setNT(t.system.custom.balance)
     })), this.getLoginInfo(), this.getConfig({
       key: "recharge",
       api: "config",

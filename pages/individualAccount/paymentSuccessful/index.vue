@@ -3,7 +3,7 @@
     <navBar :title="'支付成功'" :backgroundColor="'#0000'" :wordColor="'#fff'"></navBar>
     <image class="icon" src="https://yunbei.lianmengfu.net/xcxpic/icon/juxing.png" mode="widthFix" />
 
-    <view class="payment">
+    <view class="payment" :style="{top: top}">
       <image class="wangcheng" src="https://yunbei.lianmengfu.net/xcxpic/icon/wancheng.png" mode="widthFix" />
       <view class="text">支付成功</view>
       <view class="money"><text class="moneyIcon">￥</text>{{moneyObj.money ||"0.00"}}</view>
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { decimalPoint } from "@/utils/miniUtils.js";
+import { decimalPoint, getSystemInfo } from "@/utils/miniUtils.js";
 import { receiveWindowCoupon } from "@/api/coupon.js";
 export default {
   data() {
@@ -74,6 +74,7 @@ export default {
       show: true,//领取假状态
       coupon: {},//领取优惠券组 id
       couponList: [],//优惠券列表
+      top: '',
     }
   },
 
@@ -98,6 +99,7 @@ export default {
 
   mounted() {
     this.setHeight()
+    getSystemInfo().then(res => { this.top = res.contentTop })
   },
 
   methods: {
@@ -245,16 +247,20 @@ export default {
 
 <style lang="scss" scoped>
 .icon {
-  position: absolute;
+  position: fixed;
   left: 0rpx;
   top: 0rpx;
   width: 750rpx;
-  z-index: -1;
+  //   z-index: -0.1;
 }
 .payment {
+  width: 750rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
   .wangcheng {
     margin-top: 10rpx;
     width: 116rpx;
@@ -301,7 +307,7 @@ export default {
       align-items: center;
       //   justify-content: center;
       .noticeTop {
-        padding-top: 130rpx;
+        padding-top: 130rpx !important;
       }
       .collectCoupons {
         width: 460rpx;
@@ -381,13 +387,13 @@ export default {
   }
 }
 .goHome {
+  position: fixed;
+  bottom: 100rpx;
   width: 568rpx;
   height: 90rpx;
   line-height: 90rpx;
   text-align: center;
   background: linear-gradient(227deg, #fac763 0%, #fab222 100%);
-  margin: 0rpx auto;
-  margin-top: 800rpx;
   border-radius: 50rpx;
 }
 </style>

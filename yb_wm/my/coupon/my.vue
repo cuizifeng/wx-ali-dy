@@ -61,7 +61,7 @@ export default {
   },
   onLoad: function (t) {
     var e = this;
-    e.getSystem(), setNT("我的卡券"), e.getLoginInfo();
+    e.getSystem(), e.getLoginInfo();
     e.aIdx = +t.idx || 0, e.changeTab(e.aIdx), e.isOnLoad = !0;
   },
   onShow: function () {

@@ -3,7 +3,6 @@
     <view class="fixedtop ">
       <uni-nav-bar @onMore="onmore" :border="false" :custommore="true" :fixed="false" id="uninavbar" :isleft="false" :ispr="false" :statusBar="true" :uriconopcity="0" :uropcity="1" vueId="5f35cbf1-1" :vueSlots="['default','left']">
         <view @tap="go({t:4})" class="hdsy bsf f-c " slot="left">
-          <!-- <text class="iconfont iconjiayuan c0 f38 "></text> -->
           <uni-icons type="back" size="20"></uni-icons>
         </view>
         <view class="oi1c be f-y-c bs15 ">
@@ -21,10 +20,6 @@
             <nav-tab cname @changeTab="changeTab" v-model="aIdx" ifsize="32" :tabs="tntabs" :value="aIdx" vueId="5f35cbf1-3">
             </nav-tab>
           </view>
-          <!-- <view @tap="go({url:'/yb_wm/shop/in/indd'})" class="f-y-c p03 ">
-            <text class="iconfont icondndc c0 mr10 f38 "></text>
-            <text class="f32 c0 ">堂食</text>
-          </view> -->
         </view>
       </block>
     </view>
