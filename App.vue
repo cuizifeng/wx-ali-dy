@@ -2,6 +2,7 @@
 import { setUpdateManager } from '@/utils/miniUtils.js'
 import { getAppId } from '@/utils/getCode.js';
 import { uniacidIndex } from "@/api/index.js"
+// 00
 export default {
   globalData: {
     siteInfo: '',
