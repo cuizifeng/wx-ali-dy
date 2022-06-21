@@ -143,9 +143,7 @@ export default {
       decodeURIComponent(options.q).split('?')[1].split('=')[1] ? e.qrcodeId = decodeURIComponent(options.q).split('?')[1].split('=')[1] : '';
     }
 
-    e.getLoginInfo(), e.getSystem().then(function () {
-      // setNT("商城")
-    }), e.getCategory(), e.newGetList(), e.getHotList();
+    e.getLoginInfo(), e.getSystem(), e.getCategory(), e.newGetList(), e.getHotList();
     //存储扫描二维码进的id
     if (uni.getStorageSync('userId')) {
       if (options.userId) {

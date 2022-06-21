@@ -288,12 +288,11 @@ export default {
 
             if (o && o.system && o.system.color && !i.get) {
                 setNB && setNB(o.system.color, i.nofc);
-
             } else {
-                a = {},
-                    o.isIpx = -1 != getSb().model.search("iPhone X") ||
-                    -1 != getSb().model.search("iPhone 1") ||
-                    -1 != getSb().model.search("iPhone1");
+                // a = {},
+                //     o.isIpx = -1 != getSb().model.search("iPhone X") ||
+                //     -1 != getSb().model.search("iPhone 1") ||
+                //     -1 != getSb().model.search("iPhone1");
                 api['config_config']({
                     ident: "system"
                 }).then(res => {

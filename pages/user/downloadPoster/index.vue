@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import canvasDrawer from "@/components/canvas-drawer/index.vue";
+import canvasDrawer from "../components/canvas-drawer/index.vue";
 import { Tips } from "@/utils/miniUtils.js";
 import { getCode } from '@/api/my.js'
 export default {

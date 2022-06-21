@@ -17,7 +17,7 @@ import {
   sljz
 } from 'common/util';
 import navTab from 'components/common/functionCmp/nav-tab.vue';
-import dnOrder from 'yb_wm/index/components/dn-order.vue';
+import dnOrder from './components/dn-order.vue';
 import jzz from 'components/common/jzz.vue';
 import { mapState, mapActions } from 'vuex';
 export default {
