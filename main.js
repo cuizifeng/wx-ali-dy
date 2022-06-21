@@ -48,6 +48,7 @@ Vue.mixin({
         ]),
         // 添加访问记录
         addFwjl(t) {
+            return
             return this.$api.cloud_visit__collect({
                 storeId: t.storeId,
                 moduleName: t.origin
