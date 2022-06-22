@@ -151,7 +151,7 @@
       </view>
     </view>
     <block v-if="sjxx.shopData">
-      <tcyhq v-model="tcyhqshow" @close="__e" :co="tcCoupon" :color="tColor" vueId="02d1c88e-8"></tcyhq>
+      <!-- <tcyhq v-model="tcyhqshow" @close="__e" :co="tcCoupon" :color="tColor" vueId="02d1c88e-8"></tcyhq> -->
       <goods-car :buytype="buyType" :carBtm="system.outTabbar!=1?isIpx?'155':'115':'0'" :carlistPab="system.outTabbar!=1?isIpx?'265':'225':'110'" class="vue-ref" :show.sync="showCar" @dec="dec" @add="add" @celar="celarCar" ref="goodscar" :goodsList="catrgoryList" :sjxx="sjxx" :startmoney="startMoney" vueId="02d1c88e-9">
       </goods-car>
       <store-info v-model="showShopInfo" :co="sjxx" :qlist="sjyhq" :sjqb="sjqb" vueId="02d1c88e-10"></store-info>

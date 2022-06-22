@@ -388,6 +388,7 @@ export default {
 }
 .goHome {
   position: fixed;
+  left: 89rpx;
   bottom: 100rpx;
   width: 568rpx;
   height: 90rpx;

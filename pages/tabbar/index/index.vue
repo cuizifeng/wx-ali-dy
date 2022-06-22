@@ -149,7 +149,6 @@
 import { goodRankType, pageImage } from "@/api/index.js";
 import fixedSet from '@/components/drag/fixed.vue';
 import { goodsList } from "@/api/shop.js";
-import { getCode } from '@/utils/getCode.js';
 export default {
   data: function () {
     return {
@@ -219,16 +218,6 @@ export default {
     fixedSet,
   },
   onLoad() {
-    // getCode().then(res => {
-    //   this.$api.login_login({
-    //     code: res
-    //   }).then(r => {
-    //     this.userId = r.userId
-    //     uni.setStorageSync("userId", r.userId)
-    //     uni.setStorageSync("session_key", r.session_key)
-    //   })
-    // })
-
     // 获取门店列表
     this.$api.shop_store__list({}).then(r => {
       this.storeList = r;

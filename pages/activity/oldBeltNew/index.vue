@@ -97,7 +97,7 @@ export default {
   onShareAppMessage: function () {
     return {
       title: '进来看看吧！',
-      path: '/pages/tabbar/shop/index?userId=' + uni.getStorageSync('userId'),
+      path: '/pages/tabbar/shop/index?userId=' + uni.getStorageSync('userId') + '&type=1',
       //   imageUrl: ''
     }
   }

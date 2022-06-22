@@ -56,29 +56,29 @@ export default {
             mask: true
           });
           // 执行微信登录
-          wx.login({
-            success: (res_login) => {
-              var s = res.userInfo.avatarUrl,
-                r = res.userInfo.nickName;
-              // a = this.uId;
-              this.refreshUser({
+          //   wx.login({
+          //     success: (res_login) => {
+          var s = res.userInfo.avatarUrl,
+            r = res.userInfo.nickName;
+          // a = this.uId;
+          this.refreshUser({
 
-                // storeId: this.storeid,
-                storeId: 1,
-                portrait: s,
-                userName: r,
-                // userId: a,
-                now: 1
-              }).then((function (e) {
-                if (e.code == 1) {
-                  Tips({ title: '登录成功，正在跳转...', type: 4, url: '/pages/tabbar/my/index' })
-                }
-                // this.switchTab()
-              })).catch((function (err) {
-                // n.loading = !1
-              }))
+            // storeId: this.storeid,
+            storeId: 1,
+            portrait: s,
+            userName: r,
+            // userId: a,
+            now: 1
+          }).then((function (e) {
+            if (e.code == 1) {
+              Tips({ title: '登录成功，正在跳转...', type: 4, url: '/pages/tabbar/my/index' })
             }
-          });
+            // this.switchTab()
+          })).catch((function (err) {
+            // n.loading = !1
+          }))
+          //     }
+          //   });
         }
       });
     },

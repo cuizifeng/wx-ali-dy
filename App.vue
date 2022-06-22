@@ -17,8 +17,8 @@ export default {
     } else {
       getAppId().then(res => {
         uniacidIndex({ appid: res.appid }).then(res1 => {
-          if (res1.uniacid) {
-            uni.setStorageSync('uniacid', res1.uniacid);
+          if (res1.data.uniacid) {
+            uni.setStorageSync('uniacid', res1.data.uniacid);
           } else {
             uni.setStorageSync('uniacid', '1');
           }

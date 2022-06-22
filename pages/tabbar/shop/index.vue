@@ -141,23 +141,43 @@ export default {
     var e = this;
     if (options.q) {
       decodeURIComponent(options.q).split('?')[1].split('=')[1] ? e.qrcodeId = decodeURIComponent(options.q).split('?')[1].split('=')[1] : '';
-    }
-
-    e.getLoginInfo(), e.getSystem(), e.getCategory(), e.newGetList(), e.getHotList();
-    //存储扫描二维码进的id
-    if (uni.getStorageSync('userId')) {
-      if (options.userId) {
-        invitationInsert({ userId: options.userId })
-      }
+      e.getLoginInfo({ flag: true, inviteId: e.qrcodeId })
     } else {
-      getCode().then(res => {
-        if (res.userId) {
-          if (options.userId) {
-            invitationInsert({ userId: options.userId })
-          }
+      //存储扫描二维码进的id
+      e.getLoginInfo({ flag: true, inviteId: options.userId, type: options.type }).then(res => {
+        uni.setStorageSync('userId', res.userId)
+        getApp().globalData.session_key = res.session_key;
+        if (options.userId) {
+          invitationInsert({ userId: options.userId })
         }
       })
     }
+
+    e.getSystem();
+    e.getCategory();
+    e.newGetList();
+    e.getHotList();
+    //存储扫描二维码进的id
+    // if (uni.getStorageSync('userId')) {
+    //   if (options.userId) {
+    //     invitationInsert({ userId: options.userId })
+    //   }
+    // } else {
+    //   getCode().then(code => {
+    //     e.$api.login_login({
+    //       code: code,
+    //     }).then(res => {
+    //       uni.setStorageSync('userId', res.userId)
+    //       getApp().globalData.session_key = res.session_key;
+    //       if (res.userId) {
+    //         if (options.userId) {
+    //           invitationInsert({ userId: options.userId })
+    //         }
+    //       }
+    //     })
+
+    //   })
+    // }
   },
   mixins: [sljz],
   computed: {
