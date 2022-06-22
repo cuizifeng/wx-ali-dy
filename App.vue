@@ -28,40 +28,7 @@ export default {
   },
 
   methods: {
-    // autoUpdate: function() {
-    // 	var t = this,
-    // 		n = e.getUpdateManager();
-    // 	n.onCheckForUpdate(function(o) {
-    // 		o.hasUpdate && e.showModal({
-    // 			title: "更新提示",
-    // 			confirmText: "确定更新",
-    // 			showCancel: !1,
-    // 			content: "新版本已经准备好，是否重启应用？",
-    // 			success: function(o) {
-    // 				o.confirm ? t.downLoadAndUpdate(
-    // 					n) : e.showModal({
-    // 					title: "温馨提示~",
-    // 					content: "本次版本更新涉及到新的功能添加，旧版本无法正常访问的哦~",
-    // 					showCancel: !1,
-    // 					confirmText: "确定更新",
-    // 					success: function(e) {
-    // 						e.confirm && t.downLoadAndUpdate( n);
-    // 					}
-    // 				});
-    // 			}
-    // 		});
-    // 	});
-    // },
-    // downLoadAndUpdate: function(t) {
-    // 	e.showLoading(), t.onUpdateReady(function() {
-    // 		e.hideLoading(), t.applyUpdate();
-    // 	}), t.onUpdateFailed(function() {
-    // 		e.hideLoading(), e.showModal({
-    // 			title: "已经有新版本了哟~",
-    // 			content: "新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~"
-    // 		});
-    // 	});
-    // }
+
   },
   onShow: function () {
 
@@ -71,79 +38,12 @@ export default {
     //#ifdef MP-ALIPAY
     setUpdateManager() //更新版本
     //#endif
-    // var e = a(c.default.mark(function e(t) {
-    // 	var n;
-    // 	return c.default.wrap(function(e) {
-    // 		for (;;) switch (e.prev = e.next) {
-    // 			case 0:
-    // 				if (!t) {
-    // 					e.next = 8;
-    // 					break;
-    // 				}
-    // 				if (!t.hasOwnProperty(
-    // 						"referrerInfo")) {
-    // 					e.next = 8;
-    // 					break;
-    // 				}
-    // 				if ("wxeb490c6f9b154ef9" != t
-    // 					.referrerInfo.appId) {
-    // 					e.next = 8;
-    // 					break;
-    // 				}
-    // 				if (!t.referrerInfo
-    // 					.extraData) {
-    // 					e.next = 8;
-    // 					break;
-    // 				}
-    // 				return e.next = 6, this.util.request({
-    // 						url: this.api.jhhyk,
-    // 						method: "POST",
-    // 						data: {
-    // 							activate_ticket: t
-    // 								.referrerInfo
-    // 								.extraData
-    // 								.activate_ticket,
-    // 							card_id: t
-    // 								.referrerInfo
-    // 								.extraData
-    // 								.card_id,
-    // 							code: t
-    // 								.referrerInfo
-    // 								.extraData
-    // 								.code,
-    // 							userId: this
-    // 								.$store
-    // 								.state.user
-    // 								.userId
-    // 						}
-    // 					});
-
-    // 			case 6:
-    // 				n = e.sent, console.log(
-    // 					"%c extraData ",
-    // 					"color: white; background-color: #34aaff",
-    // 					t.referrerInfo, n.data);
-
-    // 			case 8:
-    // 			case "end":
-    // 				return e.stop();
-    // 		}
-    // 	}, e, this);
-    // }));
-    // return function(t) {
-    // 	return e.apply(this, arguments);
-    // };
   },
   onHide: function () { }
 }
 </script>
 
 <style lang="scss">
-// page {
-//   line-height: 1.6;
-//   font-family: -apple-system-font, Helvetica Neue, sans-serif;
-// }
-
 icon {
   vertical-align: middle;
 }

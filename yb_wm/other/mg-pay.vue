@@ -104,8 +104,8 @@ export default {
   onLoad: function (t) {
     // console.log(t)
     var n = this;
-    setNT("收银台"),
-      n.payObj = JSON.parse(decodeURIComponent(t.payObj)),
+    // setNT("收银台"),
+    n.payObj = JSON.parse(decodeURIComponent(t.payObj)),
       n.getConfig({
         key: "payConfig",
         api: "config_config",

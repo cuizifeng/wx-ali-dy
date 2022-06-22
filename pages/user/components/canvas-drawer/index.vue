@@ -302,7 +302,6 @@ export default {
                 success: modalSuccess => {
                   uni.openSetting({
                     success(settingdata) {
-                      console.log("settingdata", settingdata)
                       if (settingdata.authSetting['scope.writePhotosAlbum']) {
                         Tips({ title: '获取权限成功,再次点击图片即可保存', end: 3000 })
                       } else {

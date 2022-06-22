@@ -38,8 +38,6 @@ Vue.component('mgCell', mgCell);
 Vue.component('navBar', navBar);
 
 
-// var d = requirePlugin("subscribeMsg");
-// 	var h = d.requestSubscribeMessage;
 Vue.mixin({
 
     methods: {
