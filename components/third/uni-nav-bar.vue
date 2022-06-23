@@ -71,7 +71,7 @@ export default {
   props: {
     urbd: {
       type: Boolean,
-      default: !0
+      default: true
     },
     title: {
       type: String,
@@ -79,11 +79,11 @@ export default {
     },
     isleft: {
       type: Boolean,
-      default: !0
+      default: true
     },
     isright: {
       type: Boolean,
-      default: !1
+      default: false
     },
     leftcn: {
       type: String,
@@ -107,7 +107,7 @@ export default {
     },
     fixed: {
       type: [Boolean, String],
-      default: !1
+      default: false
     },
     color: {
       type: String,
@@ -119,15 +119,15 @@ export default {
     },
     statusBar: {
       type: Boolean,
-      default: !1
+      default: false
     },
     shadow: {
       type: Boolean,
-      default: !0
+      default: true
     },
     border: {
       type: Boolean,
-      default: !0
+      default: true
     },
     size: {
       type: String,
@@ -135,7 +135,7 @@ export default {
     },
     ispr: {
       type: Boolean,
-      default: !0
+      default: true
     },
     uropcity: {
       type: [String, Number],
@@ -153,11 +153,11 @@ export default {
     },
     customback: {
       type: Boolean,
-      default: !1
+      default: false
     },
     custommore: {
-      type: Boolean,
-      default: !1
+      type: Boolean | String,
+      default: false
     }
   },
   data: function () {

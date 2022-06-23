@@ -117,7 +117,8 @@ export default {
       e.getLoginInfo({
         inviteId: t.userId,
       }).then(() => {
-        e.getData(), "shopGoods" == t.page && (e.isshopGoods = !0, e.lastPage = getPage().$vm);
+        e.getData();
+        "shopGoods" == t.page && (e.isshopGoods = !0, e.lastPage = getPage().$vm);
       })
   },
   mixins: [utilMixins],
@@ -245,21 +246,29 @@ export default {
           // }
           e.shareCo.isget = 1;
           e.shareCo.co = e.co;
-          uni.getImageInfo({
-            src: e.co.icon
-          }).then(r1 => {
-            e.shareCo.bgimg = r1[1].path
-          })
-          uni.getImageInfo({
-            src: res.data || ''
-          }).then(r2 => {
-            e.shareCo.code = r2[1].path;
-          })
-          uni.getImageInfo({
-            src: e.co.storeIcon
-          }).then(r3 => {
-            e.shareCo.logo = r3[1].path;
-          })
+          if (e.co.icon) {
+            uni.getImageInfo({
+              src: e.co.icon
+            }).then(r1 => {
+              e.shareCo.bgimg = r1[1].path
+            })
+          }
+
+          if (res.data) {
+            uni.getImageInfo({
+              src: res.data || ''
+            }).then(r2 => {
+              e.shareCo.code = r2[1].path;
+            })
+          }
+
+          if (e.co.storeIcon && e.co.storeIcon != 0) {
+            uni.getImageInfo({
+              src: e.co.storeIcon
+            }).then(r3 => {
+              e.shareCo.logo = r3[1].path;
+            })
+          }
         })
       })
     },

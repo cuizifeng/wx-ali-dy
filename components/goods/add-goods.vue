@@ -58,27 +58,27 @@ export default {
     },
     isyprice: {
       type: Boolean,
-      default: !1
+      default: false
     },
     isunit: {
       type: Boolean,
-      default: !1
+      default: false
     },
     showspec: {
       type: Boolean,
-      default: !0
+      default: true
     },
     showjj: {
       type: Boolean,
-      default: !0
+      default: true
     },
     nocheckgd: {
       type: Boolean,
-      default: !1
+      default: false
     },
     addgb: {
       type: Boolean,
-      default: !0
+      default: true
     },
     color: {
       type: String,
