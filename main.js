@@ -25,6 +25,9 @@ import {
     subMessage
 } from 'lib/utils/utils';
 
+Vue.prototype.$onLaunched = new Promise(resolve => {
+    Vue.prototype.$isResolve = resolve
+})
 
 // start
 import navBar from "@/components/navBar/index.vue";

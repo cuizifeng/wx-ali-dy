@@ -9,22 +9,17 @@ export default {
   },
 
   onLaunch(options) {
-    this.getLoginInfo()
-    let query = options.query;
-    if (query?.code) {
-      let uniacid = query.code;
-      uni.setStorageSync('uniacid', uniacid);
-    } else {
-      getAppId().then(res => {
-        uniacidIndex({ appid: res.appid }).then(res1 => {
-          if (res1.data.uniacid) {
-            uni.setStorageSync('uniacid', res1.data.uniacid);
-          } else {
-            uni.setStorageSync('uniacid', '1');
-          }
-        })
+    getAppId().then(res => {
+      uniacidIndex({ appid: res.appid }).then(res1 => {
+        if (res1.data.uniacid) {
+          uni.setStorageSync('uniacid', res1.data.uniacid);
+          this.$isResolve()
+          this.getLoginInfo()
+        }
+
       })
-    }
+    })
+
   },
 
   methods: {

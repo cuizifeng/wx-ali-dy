@@ -7,10 +7,10 @@
       <view class="membershipCard">
         <view class="membershipCard_top">
           <view class="membershipCard_top_left">
-            <image class="Img" :src="suerImg || system.icon" mode="aspectFit" />
+            <image class="Img" :src="shopUser.icon" mode="aspectFit" />
             <view class="userName">
-              <view class="user">{{vipset.brandName}}</view>
-              <view class="user">{{vipset.serviceTel}}</view>
+              <view class="user">{{shopUser.name}}</view>
+              <view class="user">{{shopUser.storeTel}}</view>
             </view>
           </view>
           <view class="companyInfo"> <text @tap="go({url:'/yb_wm/other/recharge/smzf'})" class="iconfont iconewm cf10 f56 "></text></view>
@@ -36,14 +36,14 @@
       <view class="myList bottom">
         <view class="myListTitle">商家信息</view>
         <view class="myshop">
-          <view class="shop"> 商家店铺：丰台科技园店 </view>
+          <view class="shop"> 商家店铺：{{shopUser.name}} </view>
           <view class="setAll">
             <!-- 更多门店
             <image class="myListItemImg" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou.png" mode="" /> -->
           </view>
         </view>
         <view class="myshop">
-          <view class="shop"> 详细地址：北京市丰台科技园4区7号楼6M20-21 </view>
+          <view class="shop"> 详细地址：{{shopUser.address}} </view>
           <!-- <view class="setAll">
             更多门店
             <image class="myListItemImg" src="https://yunbei.lianmengfu.net/xcxpic/icon/jiantou.png" mode="" />
@@ -140,12 +140,14 @@ export default {
       query: {},
       storeId: "1",
       companyInfo: '',
+      shopUser: {},
     }
   },
   onLoad: function (t) {
     //获取门店信息
     this.$api.shop_lately__store().then(res => {
       this.storeId = res.id
+      this.shopUser = res.details
     })
     this.$api.sound_store({
       storeId: this.storeId

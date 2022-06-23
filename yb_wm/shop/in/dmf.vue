@@ -233,11 +233,6 @@ export default {
       this.money = obj.pushmoney;
       this.zfid = obj.pushzfid;
     }
-    let uniacid = uni.getStorageSync('uniacid');
-    if (!uniacid) {
-      uni.setStorageSync('uniacid', 1);
-    }
-
     uni.login({
       success: (res) => {
         const { code } = res

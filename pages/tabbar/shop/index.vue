@@ -56,8 +56,9 @@
       <nav-tab @changeTab="changeTab" :color="tColor" :tabs="tabs" :value="aIdx" vueId="16eaf28c-5"></nav-tab>
     </view>
     <goods-list class="" :qrcodeId="qrcodeId" :color="tColor" :list="dataList" vueId="16eaf28c-6"></goods-list>
-    <!-- <jzz bgcolor="transparent" class="" imgn="zwjf" :mygd="mygd" :nodata="dataList.length==0&&isget" vueId="16eaf28c-7">
-    </jzz> -->
+    <!-- bgcolor="transparent" class="" imgn="zwjf" -->
+    <jzz :mygd="mygd" :nodata="dataList.length==0&&isget" vueId="16eaf28c-7">
+    </jzz>
     <load class="" vueId="16eaf28c-8" v-if="showLoading"></load>
   </view>
 </template>
@@ -247,6 +248,11 @@ export default {
   }
 }
 </script>
+<style>
+page {
+  background: #fff !important;
+}
+</style>
 <style scoped lang="less">
 .topimg {
   width: 350rpx;

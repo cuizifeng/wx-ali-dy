@@ -217,7 +217,8 @@ export default {
   components: {
     fixedSet,
   },
-  onLoad() {
+  async onLoad() {
+    await this.$onLaunched;
     // 获取门店列表
     this.$api.shop_store__list({}).then(r => {
       this.storeList = r;

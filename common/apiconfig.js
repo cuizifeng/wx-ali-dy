@@ -40,7 +40,7 @@ export function middleWare(options) {
         appType: 'toutiao',
         // #endif 
         // 修改获取uniacid
-        uniacid: uni.getStorageSync("uniacid") || 1,
+        uniacid: uni.getStorageSync("uniacid"),
         // uniacid: 9,
 
         module: "yb_wm",
