@@ -41,7 +41,7 @@ Vue.component('navBar', navBar);
 Vue.mixin({
 
     methods: {
-        ...mapActions(['getSystem', 'getLayout', 'getLoginInfo', "refreshUser", "getSmConfig", "getAddInfo", "setCityInfo",
+        ...mapActions(['getSystem', 'getLayout', 'getLoginInfo', 'getLogin', "refreshUser", "getSmConfig", "getAddInfo", "setCityInfo",
             "setAddInfo"
         ]),
         // 添加访问记录
