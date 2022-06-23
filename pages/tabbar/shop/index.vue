@@ -141,10 +141,10 @@ export default {
     var e = this;
     if (options.q) {
       decodeURIComponent(options.q).split('?')[1].split('=')[1] ? e.qrcodeId = decodeURIComponent(options.q).split('?')[1].split('=')[1] : '';
-      e.getLoginInfo({ flag: true, inviteId: e.qrcodeId })
+      e.getLogin({ flag: true, inviteId: e.qrcodeId })
     } else {
       //存储扫描二维码进的id
-      e.getLoginInfo({ flag: true, inviteId: options.userId, type: options.type }).then(res => {
+      e.getLogin({ flag: true, inviteId: options.userId, type: options.type }).then(res => {
         uni.setStorageSync('userId', res.userId)
         getApp().globalData.session_key = res.session_key;
         if (options.userId) {

@@ -320,46 +320,50 @@ export default {
         },
 		// 获取登录令牌
 		/*  */getLoginInfo: function (e) {
+            var r = arguments;
+            var o, i, a;
+            o = e.commit, i = e.state, a = r.length > 1 && void 0 !== r[1] ? r[1] : {};
+            if (!i.user.id) {
+                getCode().then(code => {
+                    api.login_login({
+                        code: code,
+                        inviteId: a.inviteId || "",
+                        type: a.type || ""
+                    }).then(res => {
+                        o("setUser", res);
+                        //#ifdef MP-WEIXIN
+                        if (!res.session_key) {
+                            toast('请检查小程序秘钥等相关配置');
+                        }
+                        getApp().globalData.session_key = res.session_key;
+                        //#endif
+                    })
+                })
+            }
+        },
+
+        //新  绑定关系
+        getLogin: function (e) {
             return new Promise((resolve, reject) => {
                 var r = arguments;
                 var o, i, a;
                 o = e.commit, i = e.state, a = r.length > 1 && void 0 !== r[1] ? r[1] : {};
-                if (!i.user.id || (a.flag === true)) {
-                    getCode().then(code => {
-                        api.login_login({
-                            code: code,
-                            inviteId: a.inviteId || "",
-                            type: a.type || ""
-                        }).then(res => {
-                            o("setUser", res);
-                            resolve(res)
-                            //#ifdef MP-WEIXIN
-                            if (!res.session_key) {
-                                toast('请检查小程序秘钥等相关配置');
-                            }
-                            getApp().globalData.session_key = res.session_key;
-                            //#endif
-                        })
-                    })
-                    return
-                    uni.login({
-                        success: function (e) {
-                            api.login_login({
-                                code: e.code,
-                                inviteId: a.inviteId || ""
-                            }).then(res => {
-                                o("setUser", res);
-                                if (!res.session_key) {
-                                    toast('请检查小程序秘钥等相关配置');
-                                }
-                                getApp().globalData.session_key = res.session_key;
-                            })
-                        },
-                        fail: function (t) {
-                            // console.log("接口调用失败，将无法正常使用开放接口等服务", t);
+                getCode().then(code => {
+                    api.login_login({
+                        code: code,
+                        inviteId: a.inviteId || "",
+                        type: a.type || ""
+                    }).then(res => {
+                        o("setUser", res);
+                        resolve(res)
+                        //#ifdef MP-WEIXIN
+                        if (!res.session_key) {
+                            toast('请检查小程序秘钥等相关配置');
                         }
-                    });
-                }
+                        getApp().globalData.session_key = res.session_key;
+                        //#endif
+                    })
+                })
             })
 
         },

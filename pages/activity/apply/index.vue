@@ -64,7 +64,7 @@ export default {
       this.from.uid = 0
     }
     if (this.from.uid != 0) {
-      this.getLoginInfo({ flag: true, inviteId: this.from.userId, type: 2 }).then(res => {
+      this.getLogin({ flag: true, inviteId: this.from.userId, type: 2 }).then(res => {
         uni.setStorageSync('userId', res.userId)
         getApp().globalData.session_key = res.session_key;
       })

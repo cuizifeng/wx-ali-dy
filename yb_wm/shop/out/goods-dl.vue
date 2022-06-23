@@ -115,7 +115,7 @@ export default {
       e.querystoreId = r[1]) : (e.id = t.gid, e.querystoreId = t.storeId),
       e.getSystem(),
       e.getLoginInfo({
-        inviteId: t.userId
+        inviteId: t.userId,
       }).then(() => {
         e.getData(), "shopGoods" == t.page && (e.isshopGoods = !0, e.lastPage = getPage().$vm);
       })
