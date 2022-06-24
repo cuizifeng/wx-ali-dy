@@ -8,25 +8,17 @@ export const setType = {
 }
 export const getCode = function () {
     return new Promise((resolve, reject) => {
-        switch (setType.TYPE) {
-            case 'mini':
+        uni.getProvider({
+            service: 'oauth',
+            success: function (res) {
                 uni.login({
-                    success: (res) => {
-                        resolve(res.code)
+                    provider: res.provider.join(),
+                    success: (res1) => {
+                        resolve(res1.code)
                     }
                 })
-                break;
-            case 'ali':
-                my.getAuthCode({
-                    scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
-                    success: (auth) => {
-                        resolve(auth.authCode)
-                    },
-                });
-                break;
-            default:
-                break;
-        }
+            }
+        });
     })
 }
 

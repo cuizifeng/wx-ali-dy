@@ -10,7 +10,7 @@
         <swiper class="swiper-box" style="border-radius: 10rpx" @change="change" autoplay="true" circular="true" interval="3000">
           <swiper-item style="border-radius: 10rpx" v-for="(item ,index) in imgUrl.carousel_image" :key="index" @click="select">
             <view class="swiper-item" style="border-radius: 10rpx">
-              <image :src="item.image_url" mode="" style="border-radius: 10rpx" />
+              <image :src="item.image_url" style="border-radius: 10rpx" />
             </view>
           </swiper-item>
         </swiper>
