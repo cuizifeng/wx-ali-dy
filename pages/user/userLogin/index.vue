@@ -13,7 +13,7 @@
       <!-- #endif -->
 
       <!-- #ifdef MP-ALIPAY-->
-      <button class="btni cf f-c f28 " open-type="getAuthorize" scope="userInfo" @getAuthorize="onGetAuthorize" @error="onAuthError" :style="'background:'+tColor+';'+'border-color:'+tColor+';'">用户登录 </button>
+      <button class="btni cf f-c f28 " openType="getAuthorize" scope="userInfo" @getAuthorize="onGetAuthorize" @error="onAuthError" :style="'background:'+tColor+';'+'border-color:'+tColor+';'">用户登录 </button>
       <!-- #endif -->
 
       <view @click="switchTab" class="btni bf f-c f28 " :style="'border-color:'+tColor+';'+'color:'+tColor+';'">取消</view>

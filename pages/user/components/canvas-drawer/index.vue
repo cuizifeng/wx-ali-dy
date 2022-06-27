@@ -464,15 +464,11 @@ export default {
               uni.getImageInfo({
                 src: item.data.image,
                 success: (res) => {
-                  if (res.errMsg == 'getImageInfo:ok') {
-                    res.key = item.data.image;
-                    this.imageCachePool.push(res);
-                    var ret = JSON.parse(JSON.stringify(item));
-                    ret.data.image = res.path;
-                    recv(ret);
-                  } else {
-                    recj(res.errMsg);
-                  }
+                  res.key = item.data.image;
+                  this.imageCachePool.push(res);
+                  var ret = JSON.parse(JSON.stringify(item));
+                  ret.data.image = res.path;
+                  recv(ret);
                 },
                 fail(e) {
                   recj(e);
@@ -598,7 +594,7 @@ export default {
           fail(e) {
             recj(e);
           }
-        }, this)
+        }, that)
       });
     }
   }

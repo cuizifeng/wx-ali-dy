@@ -11,7 +11,6 @@ export default {
       my.getPhoneNumber({
         success: (res) => {
           let userInfo = JSON.parse(res.response).response
-          console.log(userInfo, "==================");
         },
         fail: (err) => {
           console.log('授权失败', err)

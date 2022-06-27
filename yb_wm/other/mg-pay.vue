@@ -75,12 +75,11 @@ import {
 import {
   platform
 } from 'common/apiconfig';
-import { Tips } from "@/utils/miniUtils.js";
 import {
   mapState,
   mapActions
 } from 'vuex';
-
+import { setRequestPayment } from "@/utils/pay.js"
 export default {
   name: "mg-pay",
   components: {
@@ -273,38 +272,7 @@ export default {
 
       this.$api.pay_pay(i).then(res => {
         if ("ye" != t.detail.value.radiogroup) {
-
-          // #ifdef MP-WEIXIN
-          uni.requestPayment({
-            ...res.data,
-            provider: n.provider,
-            orderInfo: res.data,
-            success: function (t) {
-              uni.reLaunch({
-                url: "/pages/individualAccount/paymentSuccessful/index?orderId=" + i.orderId + "&payType=" + '' + "&orderType=" + i.orderType
-              })
-            },
-            complete: function (e) {
-              //   console.log("paymentcomplete", e)
-            }
-          })
-          // #endif 
-
-          // #ifdef MP-ALIPAY
-          // .js
-          my.tradePay({
-            // 调用统一收单交易创建接口（alipay.trade.create），获得返回字段支付宝交易号trade_no
-            tradeNO: res.data.alipay_trade_create_response.trade_no,
-            success: (res) => {
-              if (res.resultCode == 9000) {
-                Tips({ title: res.memo, type: 5, url: "/pages/individualAccount/paymentSuccessful/index?orderId=" + i.orderId + "&payType=" + '' + "&orderType=" + i.orderType })
-              } else {
-                Tips({ title: res.memo, type: 5, url: "/yb_wm/index/order-index" })
-              }
-            },
-            fail: (res) => { }
-          });
-          // #endif
+          return setRequestPayment(res.data, i)
         } else {
           (n.setzfcg(), n.go({
             t: 2,

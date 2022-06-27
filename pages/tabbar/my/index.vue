@@ -20,7 +20,7 @@
           <!-- <view class="growth"> <text>成长值668</text> <text>距黄金会员还需要1332</text> </view> -->
         </view>
       </view>
-      <!-- <button class="start" open-type="getAuthorize" scope="phoneNumber" @getAuthorize="getPhoneNumber" @error="errorPhoneNumber">授权手机号</button> -->
+
       <myList :list="darr"></myList>
 
       <view class="myList">
@@ -307,38 +307,6 @@ export default {
         t.go({
           url: "open"
         });
-      })
-    },
-
-
-
-
-    getPhoneNumber(e) {
-      my.getPhoneNumber({
-        success: (res) => {
-          console.log('授权成功', res)
-        },
-        fail: (err) => {
-          console.log('授权失败', err)
-        }
-      })
-    },
-    // 拒绝手机号
-    errorPhoneNumber(e) {
-      console.log('拒绝授权', e)
-      this.exitAccount()
-    },
-
-    // 退出登录 功能
-    exitAccount() {
-      my.confirm({
-        title: '提示',
-        content: '取消授权，可能会使部分功能无法使用，或页面信息不完整',
-        confirmButtonText: '重新授权',//确定按钮
-        cancelButtonText: '我知道了',//取消按钮
-        success: (res) => {
-          //res打印出来是{confirm:true}
-        },
       })
     },
   },

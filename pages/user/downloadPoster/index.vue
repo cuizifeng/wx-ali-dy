@@ -3,7 +3,7 @@
     <navBar :title="'海报'" :backgroundColor="'linear-gradient(227deg, #FAC763 0%, #FAAE18 100%);'" :wordColor="'#fff'"></navBar>
 
     <view class="my-canvas-box">
-      <canvasDrawer class="canvasCenter" ref="poster" :width="690" :height="1100">
+      <canvasDrawer ref="poster" :width="690" :height="1100">
         <template v-slot="{src}">
           <image :src="src" @longpress.stop="saveImageToPhotosAlbum" style="width: 690rpx;height: 1100rpx;border-radius: 15rpx;"></image>
         </template>
@@ -104,9 +104,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  position: fixed;
-  left: 91rpx;
-  bottom: 30rpx;
+  margin-top: 100rpx;
   width: 568rpx;
   height: 90rpx;
   line-height: 90rpx;
@@ -121,13 +119,10 @@ export default {
 .my-canvas-box {
   width: 750rpx;
   height: 100%;
-  position: fixed;
-  z-index: 99;
-}
-.canvasCenter {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50rpx 0rpx;
 }
 </style>

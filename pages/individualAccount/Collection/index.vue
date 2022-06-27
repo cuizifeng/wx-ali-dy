@@ -55,6 +55,7 @@ import {
   platform
 } from 'common/apiconfig';
 import { Tips } from "@/utils/miniUtils.js";
+import { setRequestPayment } from "@/utils/pay.js"
 export default {
   components: {
     payPupup,
@@ -278,6 +279,10 @@ export default {
 
     //立即支付
     ljzf: function (event) {
+      var i = {
+        orderId: event,
+        orderType: this.orderType
+      }
       this.$api.pay_pay({
         payType: this.payIndex == "1" ? 1 : '',
         orderId: event,
@@ -299,42 +304,8 @@ export default {
               this.orderType
           })
         } else {
-
-          // #ifdef MP-WEIXIN
-          uni.requestPayment({
-            ...res.data,
-            provider: 'wxpay',
-            orderInfo: res.data,
-            success: (res) => {
-              uni.reLaunch({
-                url: "/pages/individualAccount/paymentSuccessful/index?orderId=" + event + "&payType=" + '' + "&orderType=" + this.orderType
-              })
-            },
-          })
-          // #endif 
-
-          // #ifdef MP-ALIPAY
-          // .js
-          my.tradePay({
-            // 调用统一收单交易创建接口（alipay.trade.create），获得返回字段支付宝交易号trade_no
-            tradeNO: res.data.alipay_trade_create_response.trade_no,
-            success: (res) => {
-              if (res.resultCode == 9000) {
-                Tips({ title: res.memo, type: 5, url: "/pages/individualAccount/paymentSuccessful/index?orderId=" + event + "&payType=" + '' + "&orderType=" + this.orderType })
-              } else {
-                Tips({ title: res.memo, type: 5, url: "/pages/tabbar/index/index" })
-              }
-            },
-            fail: (res) => { }
-          });
-          // #endif
-
-
-
-
+          return setRequestPayment(res.data, i, 'Collection')
         }
-
-
       });
     },
 

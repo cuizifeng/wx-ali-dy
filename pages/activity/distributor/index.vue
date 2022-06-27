@@ -8,7 +8,7 @@
       <view class="membershipCard">
         <view class="membershipCard_top">
           <view class="membershipCard_top_left">
-            <image class="Img" style="background:#fff" :src="user.portrait || userImg" mode="" />
+            <image class="Img" :src="user.portrait || userImg" mode="aspectFit" />
             <view class="userName" v-if="userObj.name && userObj.examineAt">
               <view class="usera">{{userObj.name}}</view>
               <view class="user">{{userObj.examineAt}}</view>
@@ -58,7 +58,7 @@
     <view class="bottomList">
       <view class="bottomListItem" v-for="(item,index) in list" :key="index" @click="jump(item.url)">
         <view class="titleLeft">
-          <image class="titleLeftIcon" :src="item.icon" mode="" />
+          <image class="titleLeftIcon" :src="item.icon" mode="aspectFit" />
           <view class="titleLeftName"> {{item.title}} </view>
         </view>
         <view class="jiantou"></view>
@@ -74,11 +74,11 @@
         </view>
         <view class="list">
           <button class="item" open-type="share">
-            <image class="itemIcon" src="https://yunbei.lianmengfu.net/xcxpic/icon/share.png" mode="" />
+            <image class="itemIcon" src="https://yunbei.lianmengfu.net/xcxpic/icon/share.png" mode="aspectFit" />
             <view class="itemText">分享好友</view>
           </button>
           <button class="item" @click="goPoster">
-            <image class="itemIcon" src="https://yunbei.lianmengfu.net/xcxpic/icon/dow.png" mode="" />
+            <image class="itemIcon" src="https://yunbei.lianmengfu.net/xcxpic/icon/dow.png" mode="aspectFit" />
             <view class="itemText">海报分享</view>
           </button>
         </view>
