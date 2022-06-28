@@ -1,56 +1,63 @@
 <template>
   <view>
-    <navBar :title="'全员销售'" :backgroundColor="'linear-gradient(133deg, #fec745 0%, #f9aa0c 100%)'" :wordColor="'#000'"></navBar>
-    <!-- <view class="distributorBg"></view> -->
-    <view class="memberBox">
-      <view class="membershipCard" v-if="user.portrait || user.userName">
-        <view class="membershipCard_top">
-          <view class="membershipCard_top_left">
-            <image class="Img" :src="user.portrait" mode="aspectFill" />
-            <view class="userName">
-              <view class="usera">{{user.userName?user.userName:'-'}}</view>
-              <!-- <view class="user">1234567890</view> -->
+    <navBar :title="'全员销售'" :backgroundColor="'linear-gradient(133deg, #fec745 0%, #f9aa0c 100%)'" :wordColor="'#000'">
+      <view class="distributorBg" slot="userVip"></view>
+    </navBar>
+
+    <view class="content" :style="{top:contentTop}">
+      <view class="memberBox">
+        <view class="membershipCard" v-if="user.portrait || user.userName">
+          <view class="membershipCard_top">
+            <view class="membershipCard_top_left">
+              <image class="Img" :src="user.portrait" mode="aspectFill" />
+              <view class="userName">
+                <view class="usera">{{user.userName?user.userName:'-'}}</view>
+                <!-- <view class="user">1234567890</view> -->
+              </view>
             </view>
           </view>
         </view>
-      </view>
 
-      <!-- money -->
-      <view class="moneyListBox">
-        <view class="moneyList">
-          <view class="item1-arrs">
-            <view :class="['num']">{{info.ketixianjine?info.ketixianjine:'0.00'}}</view>
-            <view class="name">可提现</view>
+        <!-- money -->
+        <view class="moneyListBox">
+          <view class="moneyList">
+            <view class="item1-arrs">
+              <view :class="['num']">{{info.ketixianjine?info.ketixianjine:'0.00'}}</view>
+              <view class="name">可提现</view>
+            </view>
+            <view class="item1-arrs">
+              <view :class="['num']">{{info.userAuditMoney?info.userAuditMoney:'0.00'}}</view>
+              <view class="name">提现中</view>
+            </view>
+            <view class="item1-arrs">
+              <view :class="['num']">{{info.userCompleteMoney?info.userCompleteMoney:'0.00'}}</view>
+              <view class="name">已提现</view>
+            </view>
           </view>
-          <view class="item1-arrs">
-            <view :class="['num']">{{info.userAuditMoney?info.userAuditMoney:'0.00'}}</view>
-            <view class="name">提现中</view>
-          </view>
-          <view class="item1-arrs">
-            <view :class="['num']">{{info.userCompleteMoney?info.userCompleteMoney:'0.00'}}</view>
-            <view class="name">已提现</view>
-          </view>
+          <view class="Withdrawal" @click="withdrawal">提现</view>
         </view>
-        <view class="Withdrawal" @click="withdrawal">提现</view>
+      </view>
+      <!-- 底部列表 -->
+      <view class="bottomList">
+        <view class="bottomListItem" v-for="(item,index) in list" :key="index" @click="jump(item.url)">
+          <view class="titleLeft">
+            <image class="titleLeftIcon" :src="item.icon" mode="aspectFill" />
+            <view class="titleLeftName"> {{item.title}} </view>
+          </view>
+          <view class="jiantou"></view>
+        </view>
       </view>
     </view>
-    <!-- 底部列表 -->
-    <view class="bottomList">
-      <view class="bottomListItem" v-for="(item,index) in list" :key="index" @click="jump(item.url)">
-        <view class="titleLeft">
-          <image class="titleLeftIcon" :src="item.icon" mode="aspectFill" />
-          <view class="titleLeftName"> {{item.title}} </view>
-        </view>
-        <view class="jiantou"></view>
-      </view>
-    </view>
+
   </view>
 </template>
 
 <script>
+import { getSystemInfo } from "@/utils/miniUtils.js"
 export default {
   data() {
     return {
+      contentTop: '',
       info: '',//详情
       getDistribution: {},//页面数据
       list: [
@@ -70,6 +77,7 @@ export default {
   onLoad() {
     this.code_list()
     console.log(this.user)
+    getSystemInfo().then(res => { this.contentTop = res.contentTop })
   },
   methods: {
     //奖励金额
@@ -103,11 +111,18 @@ export default {
 page {
   background: #ffffff !important;
 }
+.content {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+}
 .distributorBg {
   position: absolute;
   left: 0rpx;
   top: 0rpx;
-  z-index: -1;
   width: 750rpx;
   height: 500rpx;
   background: linear-gradient(133deg, #fec745 0%, #f9aa0c 100%);

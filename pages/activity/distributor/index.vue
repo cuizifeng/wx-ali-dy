@@ -4,64 +4,66 @@
       <view slot="userVip" class="distributorBg"></view>
     </navBar>
 
-    <view class="memberBox">
-      <view class="membershipCard">
-        <view class="membershipCard_top">
-          <view class="membershipCard_top_left">
-            <image class="Img" :src="user.portrait || userImg" mode="aspectFit" />
-            <view class="userName" v-if="userObj.name && userObj.examineAt">
-              <view class="usera">{{userObj.name}}</view>
-              <view class="user">{{userObj.examineAt}}</view>
+    <view class="content" :style="{top:contentTop}">
+      <view class="memberBox">
+        <view class="membershipCard">
+          <view class="membershipCard_top">
+            <view class="membershipCard_top_left">
+              <image class="Img" :src="user.portrait || userImg" mode="aspectFit" />
+              <view class="userName" v-if="userObj.name && userObj.examineAt">
+                <view class="usera">{{userObj.name}}</view>
+                <view class="user">{{userObj.examineAt}}</view>
+              </view>
+            </view>
+            <view class="companyInfo" @click="toggle('bottom')">邀请伙伴</view>
+            <!-- <button open-type="share"open-type="share" class="companyInfo">邀请伙伴</button> -->
+          </view>
+          <view class="membershipCard_bottom">
+            <view class="membershipCard_bottom_item">
+              <view class="item_num">{{getDistribution.allMoney || '0.00'}}</view>
+              <view class="item_name">累计佣金</view>
+            </view>
+            <view class="membershipCard_bottom_line"></view>
+
+            <view class="membershipCard_bottom_item">
+              <view class="item_num">{{getDistribution.people || 0}}</view>
+              <view class="item_name">伙伴</view>
             </view>
           </view>
-          <view class="companyInfo" @click="toggle('bottom')">邀请伙伴</view>
-          <!-- <button open-type="share"open-type="share" class="companyInfo">邀请伙伴</button> -->
         </view>
-        <view class="membershipCard_bottom">
-          <view class="membershipCard_bottom_item">
-            <view class="item_num">{{getDistribution.allMoney || '0.00'}}</view>
-            <view class="item_name">累计佣金</view>
-          </view>
-          <view class="membershipCard_bottom_line"></view>
 
-          <view class="membershipCard_bottom_item">
-            <view class="item_num">{{getDistribution.people || 0}}</view>
-            <view class="item_name">伙伴</view>
+        <!-- money -->
+        <view class="moneyListBox">
+          <view class="moneyList">
+            <view class="item1-arrs">
+              <view :class="['num']">{{getDistribution.wait || '0.00'}}</view>
+              <view class="name">在路上</view>
+            </view>
+            <view class="item1-arrs">
+              <view :class="['num']">{{getDistribution.userMoney || '0.00'}}</view>
+              <view class="name">可提现</view>
+            </view>
+            <view class="item1-arrs">
+              <view :class="['num']">{{getDistribution.frozen || '0.00'}}</view>
+              <view class="name">提现中</view>
+            </view>
+            <view class="item1-arrs">
+              <view :class="['num']">{{getDistribution.alreadyMoney || '0.00'}}</view>
+              <view class="name">已提现</view>
+            </view>
           </view>
+          <view class="Withdrawal" @click="withdrawal">提现</view>
         </view>
       </view>
-
-      <!-- money -->
-      <view class="moneyListBox">
-        <view class="moneyList">
-          <view class="item1-arrs">
-            <view :class="['num']">{{getDistribution.wait || '0.00'}}</view>
-            <view class="name">在路上</view>
+      <!-- 底部列表 -->
+      <view class="bottomList">
+        <view class="bottomListItem" v-for="(item,index) in list" :key="index" @click="jump(item.url)">
+          <view class="titleLeft">
+            <image class="titleLeftIcon" :src="item.icon" mode="aspectFit" />
+            <view class="titleLeftName"> {{item.title}} </view>
           </view>
-          <view class="item1-arrs">
-            <view :class="['num']">{{getDistribution.userMoney || '0.00'}}</view>
-            <view class="name">可提现</view>
-          </view>
-          <view class="item1-arrs">
-            <view :class="['num']">{{getDistribution.frozen || '0.00'}}</view>
-            <view class="name">提现中</view>
-          </view>
-          <view class="item1-arrs">
-            <view :class="['num']">{{getDistribution.alreadyMoney || '0.00'}}</view>
-            <view class="name">已提现</view>
-          </view>
+          <view class="jiantou"></view>
         </view>
-        <view class="Withdrawal" @click="withdrawal">提现</view>
-      </view>
-    </view>
-    <!-- 底部列表 -->
-    <view class="bottomList">
-      <view class="bottomListItem" v-for="(item,index) in list" :key="index" @click="jump(item.url)">
-        <view class="titleLeft">
-          <image class="titleLeftIcon" :src="item.icon" mode="aspectFit" />
-          <view class="titleLeftName"> {{item.title}} </view>
-        </view>
-        <view class="jiantou"></view>
       </view>
     </view>
 
@@ -89,10 +91,11 @@
 
 <script>
 import { distribution, config, applyDistributionGet } from '@/api/my.js';
-import { showModal } from "@/utils/miniUtils.js"
+import { showModal, getSystemInfo } from "@/utils/miniUtils.js"
 export default {
   data() {
     return {
+      contentTop: '',
       safeArea: false,
       getDistribution: {},//页面数据
       list: [
@@ -124,6 +127,7 @@ export default {
 
   mounted() {
     this.init()
+    getSystemInfo().then(res => { this.contentTop = res.contentTop })
   },
   methods: {
     init() {
@@ -189,11 +193,20 @@ export default {
 page {
   background: #ffffff !important;
 }
+.content {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  //   align-items: center;
+}
 .distributorBg {
   position: absolute;
   left: 0rpx;
   top: 0rpx;
-  z-index: -1;
+  // z-index: -1;
   width: 750rpx;
   height: 500rpx;
   background: linear-gradient(133deg, #fec745 0%, #f9aa0c 100%);

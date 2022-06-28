@@ -8,7 +8,6 @@
           <image :src="src" @longpress.stop="saveImageToPhotosAlbum" style="width: 690rpx;height: 1100rpx;border-radius: 15rpx;"></image>
         </template>
       </canvasDrawer>
-
       <view class="footer" @longpress.stop="saveImageToPhotosAlbum">长按保存海报</view>
     </view>
 

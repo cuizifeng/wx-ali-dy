@@ -59,11 +59,11 @@
 
 <script>
 import { config, bonusWithdrawal } from "@/api/my.js";
-import { Tips, formatRichText } from "@/utils/miniUtils.js";
+import { Tips, formatRichText, getSystemInfo } from "@/utils/miniUtils.js";
 export default {
   data() {
     return {
-      contentTop: uni.getStorageSync('menuInfo').contentTop,
+      contentTop: '',
       weixin: 'https://yunbei.lianmengfu.net/xcxpic/icon/weixin1.png',
       alipay: 'https://yunbei.lianmengfu.net/xcxpic/icon/zfbflag.png',
       yue: 'https://yunbei.lianmengfu.net/xcxpic/icon/yue1.png',
@@ -90,6 +90,7 @@ export default {
     //#endif
     this.params.item = options.item ? options.item : 1;
     this.init(options.ident)
+    getSystemInfo().then(res => { this.contentTop = res.contentTop })
   },
   methods: {
     init(type) {
