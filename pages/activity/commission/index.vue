@@ -76,7 +76,6 @@ export default {
   },
   onLoad() {
     this.code_list()
-    console.log(this.user)
     getSystemInfo().then(res => { this.contentTop = res.contentTop })
   },
   methods: {
@@ -86,7 +85,6 @@ export default {
         userId: uni.getStorageSync('userId')
       }).then(res => {
         this.info = res
-        console.log(this.info)
       })
     },
     //提现
