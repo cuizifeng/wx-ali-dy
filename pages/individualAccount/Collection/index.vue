@@ -54,7 +54,6 @@ import getMath from "@/utils/math.js";
 import {
   platform
 } from 'common/apiconfig';
-import { Tips } from "@/utils/miniUtils.js";
 import { setRequestPayment } from "@/utils/pay.js"
 export default {
   components: {
