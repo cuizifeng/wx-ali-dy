@@ -29,7 +29,7 @@
           <my-order @operation="operation" :co="v" :vueId="'5f35cbf1-4-'+i" v-for="(v, i) in dataList" :key="i"></my-order>
         </block>
         <dn-order v-model="laIdx" @refresh="dnrefresh" :datalist="dataList" :labelarr="labelArr" :ltop="toph" :otype="tntabs[aIdx].type" :value="laIdx" vueId="5f35cbf1-5" v-else></dn-order>
-        <jzz bgcolor="transparent" :mygd="mygd" :nodata="dataList.length==0&&isget" otext="您今天还没有下单" ttext="快去选择喜欢的商品吧" vueId="5f35cbf1-6"></jzz>
+        <jzz :bgcolor="transparent" :mygd="mygd" :nodata="dataList.length==0&&isget" otext="您今天还没有下单" ttext="快去选择喜欢的商品吧" vueId="5f35cbf1-6"></jzz>
         <view @tap="go({t:6,url:'/pages/tabbar/order/index'})" class="oiqdd bs5 f-c f34 cf ma " :hidden="!(dataList.length==0&&isget)" :style="'background:'+tColor+';'">去点单</view>
       </block>
       <view class="f-c-c " v-else>

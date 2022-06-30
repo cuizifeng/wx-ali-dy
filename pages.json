@@ -1,835 +1,849 @@
 {
-    "easycom": {},
-    "pages": [
-        {
-            "path": "pages/tabbar/index/index",
-            "style": {
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": false,
-                "mp-alipay": {
-                    "transparentTitle": "always",
-                    "titlePenetrate": "YES"
-                }
-            }
-        },
-        {
-            "path": "pages/tabbar/order/index",
-            "style": {
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": false,
-                "mp-alipay": {
-                    "transparentTitle": "always",
-                    "titlePenetrate": "YES"
-                }
-            }
-        },
-        {
-            "path": "pages/tabbar/shop/index",
-            "style": {
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": false,
-                "mp-alipay": {
-                    "transparentTitle": "always",
-                    "titlePenetrate": "YES"
-                }
-            }
-        },
-        {
-            "path": "pages/tabbar/my/index",
-            "style": {
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": false,
-                "mp-alipay": {
-                    "transparentTitle": "always",
-                    "titlePenetrate": "YES"
-                }
-            }
+  "easycom": {},
+  "pages": [
+    {
+      "path": "pages/tabbar/index/index",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false,
+        "mp-alipay": {
+          "transparentTitle": "always",
+          "titlePenetrate": "YES"
         }
-    ],
-    "tabBar": {
-        "color": "#999999",
-        "fontSize": "25px",
-        "spacing": "4px",
-        "selectedColor": "#FFC000",
-        "borderStyle": "white",
-        "backgroundColor": "#ffffff",
-        "list": [
-            {
-                "pagePath": "pages/tabbar/index/index",
-                "iconPath": "static/tabBar/indexb.png",
-                "selectedIconPath": "static/tabBar/indexa.png",
-                "text": "首页"
-            },
-            {
-                "pagePath": "pages/tabbar/order/index",
-                "iconPath": "static/tabBar/orderb.png",
-                "selectedIconPath": "static/tabBar/ordera.png",
-                "text": "点单"
-            },
-            {
-                "pagePath": "pages/tabbar/shop/index",
-                "iconPath": "static/tabBar/shopb.png",
-                "selectedIconPath": "static/tabBar/shopa.png",
-                "text": "商城"
-            },
-            {
-                "pagePath": "pages/tabbar/my/index",
-                "iconPath": "static/tabBar/myb.png",
-                "selectedIconPath": "static/tabBar/mya.png",
-                "text": "会员"
-            }
-        ]
+      }
     },
-    "subPackages": [
-        {
-            "root": "yb_wm/index",
-            "pages": [
-                {
-                    "path": "order-index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "getredoder",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "root": "yb_wm/order",
-            "pages": [
-                {
-                    "path": "order-dl",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "coupon-bag/list",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "other/smjh",
-                    "style": {}
-                },
-                {
-                    "path": "other/custom",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "vip/wkk",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "vip/open",
-                    "style": {}
-                },
-                {
-                    "path": "vip/czz",
-                    "style": {}
-                },
-                {
-                    "path": "coupon-bag/qbxq",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "coupon-bag/gmjl",
-                    "style": {}
-                },
-                {
-                    "path": "coupon-bag/qrdd",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "root": "yb_wm/other",
-            "pages": [
-                {
-                    "path": "mg-pay",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "recharge/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "recharge/yemx",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "recharge/yesy",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "recharge/smzf",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "info/index",
-                    "style": {}
-                },
-                {
-                    "path": "info/detail",
-                    "style": {}
-                },
-                {
-                    "path": "live-list",
-                    "style": {}
-                },
-                {
-                    "path": "hb",
-                    "style": {}
-                },
-                {
-                    "path": "rwzx",
-                    "style": {}
-                },
-                {
-                    "path": "scyl",
-                    "style": {}
-                },
-                {
-                    "path": "sq-login",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "zfyl",
-                    "style": {}
-                },
-                {
-                    "path": "web-view",
-                    "style": {}
-                },
-                {
-                    "path": "withDrawal/record",
-                    "style": {
-                        "onReachBottomDistance": 30,
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": true,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "root": "yb_wm/shop",
-            "pages": [
-                {
-                    "path": "out/bz",
-                    "style": {}
-                },
-                {
-                    "path": "out/pay-order",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "in/dmf"
-                },
-                {
-                    "path": "in/selectYou",
-                    "style": {}
-                },
-                {
-                    "path": "in/zfwc",
-                    "style": {}
-                },
-                {
-                    "path": "in/syorder-dl",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "in/goods",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "in/car",
-                    "style": {}
-                },
-                {
-                    "path": "in/pay-order",
-                    "style": {}
-                },
-                {
-                    "path": "in/indd",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "in/order-dl",
-                    "style": {}
-                },
-                {
-                    "path": "ffmode/goods",
-                    "style": {}
-                },
-                {
-                    "path": "ffmode/pay-order",
-                    "style": {}
-                },
-                {
-                    "path": "ffmode/order-dl",
-                    "style": {}
-                },
-                {
-                    "path": "out/goods-dl",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "select/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "search/out",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "select/select",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "root": "yb_wm/my",
-            "pages": [
-                {
-                    "path": "address/index",
-                    "style": {}
-                },
-                {
-                    "path": "address/address",
-                    "style": {}
-                },
-                {
-                    "path": "coupon/my",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "coupon/center",
-                    "style": {}
-                },
-                {
-                    "path": "coupon/coupon-dl",
-                    "style": {}
-                },
-                {
-                    "path": "coupon/use-coupon",
-                    "style": {}
-                },
-                {
-                    "path": "coupon/dh",
-                    "style": {}
-                },
-                {
-                    "path": "integral/shop-index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "integral/details",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "integral/my-integral",
-                    "style": {}
-                },
-                {
-                    "path": "integral/integral-record",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "integral/order-dl",
-                    "style": {}
-                },
-                {
-                    "path": "signin/index",
-                    "style": {}
-                },
-                {
-                    "path": "signin/my-signin",
-                    "style": {}
-                },
-                {
-                    "path": "signin/my-coupon",
-                    "style": {}
-                },
-                {
-                    "path": "other/bjzl",
-                    "style": {}
-                },
-                {
-                    "path": "other/kfz",
-                    "style": {}
-                },
-                {
-                    "path": "other/kf",
-                    "style": {}
-                },
-                {
-                    "path": "other/gywm",
-                    "style": {}
-                },
-                {
-                    "path": "other/gywmtwo",
-                    "style": {}
-                },
-                {
-                    "path": "other/bzzx",
-                    "style": {}
-                },
-                {
-                    "path": "other/collection",
-                    "style": {}
-                },
-                {
-                    "path": "other/ptxx",
-                    "style": {}
-                }
-            ]
-        },
-        {
-            "root": "pages/individualAccount",
-            "name": "individualAccount",
-            "pages": [
-                {
-                    "path": "Collection/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "couponList/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "paymentSuccessful/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "withdrawalSucceeded/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "withdrawal/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "root": "pages/activity",
-            "name": "activity",
-            "pages": [
-                {
-                    "path": "activityList/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "apply/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "distributor/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "oldBeltNew/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "commission/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "preferentialGroup/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "seckill/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "classification/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "root": "pages/orderAll",
-            "name": "orderAll",
-            "pages": [
-                {
-                    "path": "distributionOrder/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "withdrawalDetails/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "weeklyList/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "team/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
-        },
-        {
-            "root": "pages/user",
-            "name": "user",
-            "pages": [
-                {
-                    "path": "login/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "downloadPoster/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                },
-                {
-                    "path": "userLogin/index",
-                    "style": {
-                        "navigationStyle": "custom",
-                        "enablePullDownRefresh": false,
-                        "mp-alipay": {
-                            "transparentTitle": "always",
-                            "titlePenetrate": "YES"
-                        }
-                    }
-                }
-            ]
+    {
+      "path": "pages/tabbar/order/index",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false,
+        "mp-alipay": {
+          "transparentTitle": "always",
+          "titlePenetrate": "YES"
         }
-    ],
-    "permission": {
-        "scope.userLocation": {
-            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
+    },
+    {
+      "path": "pages/tabbar/shop/index",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false,
+        "mp-alipay": {
+          "transparentTitle": "always",
+          "titlePenetrate": "YES"
         }
+      }
     },
-    "plugins": {},
-    "sitemapLocation": "sitemap.json",
-    "globalStyle": {
-        "navigationBarTextStyle": "black",
-        "navigationBarTitleText": "",
-        "navigationBarBackgroundColor": "#FFFFFF",
-        "backgroundColor": "#FFFFFF",
-        "usingComponents": {}
-    },
-    "condition": { //模式配置，仅开发期间生效
-        "current": 0, //当前激活的模式(list 的索引项)
-        "list": [
-            {
-                "name": "", //模式名称
-                "path": "", //启动页面，必选
-                "query": "" //启动参数，在页面的onLoad函数里面得到
-            }
-        ]
+    {
+      "path": "pages/tabbar/my/index",
+      "style": {
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false,
+        "mp-alipay": {
+          "transparentTitle": "always",
+          "titlePenetrate": "YES"
+        }
+      }
     }
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "fontSize": "25px",
+    "spacing": "4px",
+    "selectedColor": "#FFC000",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/index/index",
+        "iconPath": "static/tabBar/indexb.png",
+        "selectedIconPath": "static/tabBar/indexa.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabbar/order/index",
+        "iconPath": "static/tabBar/orderb.png",
+        "selectedIconPath": "static/tabBar/ordera.png",
+        "text": "点单"
+      },
+      {
+        "pagePath": "pages/tabbar/shop/index",
+        "iconPath": "static/tabBar/shopb.png",
+        "selectedIconPath": "static/tabBar/shopa.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/tabbar/my/index",
+        "iconPath": "static/tabBar/myb.png",
+        "selectedIconPath": "static/tabBar/mya.png",
+        "text": "会员"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "yb_wm/index",
+      "pages": [
+        {
+          "path": "order-index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "getredoder",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "root": "yb_wm/order",
+      "pages": [
+        {
+          "path": "order-dl",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "coupon-bag/list",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "other/smjh",
+          "style": {}
+        },
+        {
+          "path": "other/custom",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "vip/wkk",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "vip/open",
+          "style": {}
+        },
+        {
+          "path": "vip/czz",
+          "style": {}
+        },
+        {
+          "path": "coupon-bag/qbxq",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "coupon-bag/gmjl",
+          "style": {}
+        },
+        {
+          "path": "coupon-bag/qrdd",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "root": "yb_wm/other",
+      "pages": [
+        {
+          "path": "mg-pay",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "recharge/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "recharge/yemx",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "recharge/yesy",
+          "style": {
+            "navigationStyle": "custom",
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "recharge/smzf",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "info/index",
+          "style": {}
+        },
+        {
+          "path": "info/detail",
+          "style": {}
+        },
+        {
+          "path": "live-list",
+          "style": {}
+        },
+        {
+          "path": "hb",
+          "style": {}
+        },
+        {
+          "path": "rwzx",
+          "style": {}
+        },
+        {
+          "path": "scyl",
+          "style": {}
+        },
+        {
+          "path": "sq-login",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "zfyl",
+          "style": {}
+        },
+        {
+          "path": "web-view",
+          "style": {}
+        },
+        {
+          "path": "withDrawal/record",
+          "style": {
+            "onReachBottomDistance": 30,
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": true,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "root": "yb_wm/shop",
+      "pages": [
+        {
+          "path": "out/bz",
+          "style": {}
+        },
+        {
+          "path": "out/pay-order",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "in/dmf"
+        },
+        {
+          "path": "in/selectYou",
+          "style": {}
+        },
+        {
+          "path": "in/zfwc",
+          "style": {}
+        },
+        {
+          "path": "in/syorder-dl",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "in/goods",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "in/car",
+          "style": {}
+        },
+        {
+          "path": "in/pay-order",
+          "style": {}
+        },
+        {
+          "path": "in/indd",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "in/order-dl",
+          "style": {}
+        },
+        {
+          "path": "ffmode/goods",
+          "style": {}
+        },
+        {
+          "path": "ffmode/pay-order",
+          "style": {}
+        },
+        {
+          "path": "ffmode/order-dl",
+          "style": {}
+        },
+        {
+          "path": "out/goods-dl",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "select/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "search/out",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "select/select",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "root": "yb_wm/my",
+      "pages": [
+        {
+          "path": "address/index",
+          "style": {}
+        },
+        {
+          "path": "address/address",
+          "style": {}
+        },
+        {
+          "path": "coupon/my",
+          "style": {
+            "navigationStyle": "custom",
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "coupon/center",
+          "style": {}
+        },
+        {
+          "path": "coupon/coupon-dl",
+          "style": {}
+        },
+        {
+          "path": "coupon/use-coupon",
+          "style": {}
+        },
+        {
+          "path": "coupon/dh",
+          "style": {}
+        },
+        {
+          "path": "integral/shop-index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "integral/details",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "integral/my-integral",
+          "style": {}
+        },
+        {
+          "path": "integral/integral-record",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "integral/order-dl",
+          "style": {}
+        },
+        {
+          "path": "signin/index",
+          "style": {}
+        },
+        {
+          "path": "signin/my-signin",
+          "style": {}
+        },
+        {
+          "path": "signin/my-coupon",
+          "style": {}
+        },
+        {
+          "path": "other/bjzl",
+          "style": {}
+        },
+        {
+          "path": "other/kfz",
+          "style": {}
+        },
+        {
+          "path": "other/kf",
+          "style": {}
+        },
+        {
+          "path": "other/gywm",
+          "style": {}
+        },
+        {
+          "path": "other/gywmtwo",
+          "style": {}
+        },
+        {
+          "path": "other/bzzx",
+          "style": {}
+        },
+        {
+          "path": "other/collection",
+          "style": {}
+        },
+        {
+          "path": "other/ptxx",
+          "style": {}
+        }
+      ]
+    },
+    {
+      "root": "pages/individualAccount",
+      "name": "individualAccount",
+      "pages": [
+        {
+          "path": "Collection/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "couponList/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "paymentSuccessful/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "withdrawalSucceeded/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "withdrawal/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/activity",
+      "name": "activity",
+      "pages": [
+        {
+          "path": "activityList/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "apply/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "distributor/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "oldBeltNew/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "commission/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "preferentialGroup/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "seckill/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "classification/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/orderAll",
+      "name": "orderAll",
+      "pages": [
+        {
+          "path": "distributionOrder/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "withdrawalDetails/index",
+          "style": {
+            "navigationStyle": "custom",
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "weeklyList/index",
+          "style": {
+            "navigationStyle": "custom",
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "team/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/user",
+      "name": "user",
+      "pages": [
+        {
+          "path": "login/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "downloadPoster/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "userLogin/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        },
+        {
+          "path": "autograph/index",
+          "style": {
+            "navigationStyle": "custom",
+            "enablePullDownRefresh": false,
+            "navigationBarTitleText": "亲笔签名",
+            "disableScroll": true,
+            "mp-alipay": {
+              "transparentTitle": "always",
+              "titlePenetrate": "YES"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {},
+  "sitemapLocation": "sitemap.json",
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FFFFFF",
+    "usingComponents": {}
+  },
+  "condition": {
+    //模式配置，仅开发期间生效
+    "current": 0, //当前激活的模式(list 的索引项)
+    "list": [
+      {
+        "name": "", //模式名称
+        "path": "", //启动页面，必选
+        "query": "" //启动参数，在页面的onLoad函数里面得到
+      }
+    ]
+  }
 }
