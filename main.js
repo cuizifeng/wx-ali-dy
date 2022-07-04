@@ -29,6 +29,8 @@ Vue.prototype.$onLaunched = new Promise(resolve => {
     Vue.prototype.$isResolve = resolve
 })
 
+import uView from "uview-ui";
+Vue.use(uView);
 // start
 import navBar from "@/components/navBar/index.vue";
 //end
